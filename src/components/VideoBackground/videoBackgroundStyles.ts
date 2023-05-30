@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export interface VideoBackgroundProps {
-    videoSrc: string;
-  }
+  videoSrc: string
+}
 
-  export const VideoContainer = styled.div`
+export const VideoContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
@@ -12,10 +12,10 @@ export interface VideoBackgroundProps {
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 export const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`;
+`
