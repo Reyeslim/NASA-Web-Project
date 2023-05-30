@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-export interface VideoBackgroundProps {
-  videoSrc: string
-}
-
 export const VideoContainer = styled.div`
   position: relative;
   width: 100%;

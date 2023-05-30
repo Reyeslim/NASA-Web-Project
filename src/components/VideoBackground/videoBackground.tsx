@@ -10,8 +10,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
     <VideoContainer>
       <Video autoPlay muted loop>
         <source
-          src="Multimedia/Videos/earth_-_28531 (Original).mp4"
-          type="video/mp4"
+          src={videoSrc}
         />
       </Video>
     </VideoContainer>
