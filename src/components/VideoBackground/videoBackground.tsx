@@ -11,7 +11,6 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
       <Video autoPlay muted loop>
         <source
           src={videoSrc}
-          type="video/mp4"
         />
       </Video>
     </VideoContainer>
@@ -19,5 +18,3 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
 }
 
 export default memo(VideoBackground)
-
-

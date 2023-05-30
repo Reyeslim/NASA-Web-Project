@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 export const VideoContainer = styled.div`
   position: relative;
   width: 100%;
@@ -17,5 +15,3 @@ export const Video = styled.video`
   height: 100%;
   object-fit: cover;
 `
-
-

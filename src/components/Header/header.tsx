@@ -1,3 +1,4 @@
+
 import { FC, memo } from "react";
 import { Container, ButtonContainer, Button,  } from "./headerStyles";
 
@@ -10,7 +11,8 @@ const Header: FC = () => {
         <Button>CERRAR</Button>
       </ButtonContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default memo(Header);
+export default memo(Header)
+
