@@ -1,6 +1,6 @@
 
 import { FC, memo } from "react";
-import { Container, ButtonContainer, Button,  } from "./headerStyles";
+import { Container, ButtonContainer, Button, } from "./headerStyles";
 
 const Header: FC = () => {
   return (
