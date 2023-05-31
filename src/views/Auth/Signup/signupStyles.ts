@@ -26,7 +26,7 @@ export const FormContent = styled.div`
 `
 
 export const Title = styled.h3`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
@@ -37,19 +37,19 @@ export const InputController = styled.div`
   flex-flow: column;
 
   &:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 `
 
 export const Label = styled.label`
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
 `
 
 export const Input = styled.input`
-  height: 50px;
+  height: 30px;
   width: 95%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
@@ -61,7 +61,7 @@ export const Input = styled.input`
 `
 
 export const Button = styled.button`
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
   background-color: #ffffff;
   color: #080710;
