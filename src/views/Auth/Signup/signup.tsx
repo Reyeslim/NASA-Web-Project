@@ -1,6 +1,4 @@
 import { FC, memo } from 'react'
-import { Formik } from 'formik'
-import { InitialValues, ValidationSchema } from './constant'
 import {
   Button,
   Container,
@@ -12,14 +10,22 @@ import {
   Label,
   Link,
   Title,
-} from './loginStyles'
+} from './signupStyles'
 
-const Login: FC = () => {
+const Signup: FC = () => {
   return (
     <Container>
       <Form>
         <FormContent>
-          <Title>Inicia sesión</Title>
+          <Title>Crear cuenta</Title>
+          <InputController>
+            <Label>Nombre</Label>
+            <Input type="text" name="name" />
+          </InputController>
+          <InputController>
+            <Label>Teléfono</Label>
+            <Input type="tel" name="phone" />
+          </InputController>
           <InputController>
             <Label>Correo Electrónico</Label>
             <Input type="email" name="email" />
@@ -28,20 +34,14 @@ const Login: FC = () => {
             <Label>Contraseña</Label>
             <Input type="password" name="password" />
           </InputController>
-          <Button>Inicia sesión</Button>
+          <Button>Crear cuenta</Button>
           <Info>
-            ¿Todavía no te has registrado?{' '}
-            <Link to="/signup">Regístrate aquí</Link>
+            ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
           </Info>
         </FormContent>
       </Form>
-      {/* <Formik
-    initialValues={InitialValues}
-    validationSchema={ValidationSchema}
-    onSubmit={}
-    ></Formik> */}
     </Container>
   )
 }
 
-export default memo(Login)
+export default memo(Signup)
