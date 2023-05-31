@@ -1,4 +1,4 @@
-type NasaCategoriesResponse = {
+type NasaAPODResponse = {
     copyright?: string
     date: string
     explanation: string
@@ -9,4 +9,6 @@ type NasaCategoriesResponse = {
     url: string
 }
 
-const normalizeCategory = (input: NasaCategoriesResponse) => ({})
+const normalizeAPODResponse = (input: NasaAPODResponse) => ({
+    title: input?.title || '',
+})
