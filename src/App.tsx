@@ -1,9 +1,9 @@
-import Dashboard from './views/Dashboard/dashboard'
+import Router from './containers/Router/router'
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <Router />
     </div>
   )
 }
