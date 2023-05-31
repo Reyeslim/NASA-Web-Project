@@ -71,6 +71,12 @@ export const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `
+export const InputError = styled.span`
+  color: red;
+  font-size: 12px;
+  line-height: 0.9;
+  margin-top: 8px;
+`
 export const Info = styled.p`
   color: #dff9ff;
   display: block;
