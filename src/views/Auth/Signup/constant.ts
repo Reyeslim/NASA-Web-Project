@@ -1,5 +1,7 @@
 import { number, object, string } from 'yup'
 export const InitialValues = {
+  name: '',
+  phone: '',
   email: '',
   password: '',
 }
