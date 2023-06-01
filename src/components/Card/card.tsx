@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo, useCallback, ReactNode } from 'react';
 import {
   Button,
   Container,
@@ -7,15 +7,22 @@ import {
   Footer,
   FooterContent,
   Header,
-} from './cardstyles'
-import type { Props } from './types'
+  ImageContainer,
+  Image,
+} from './cardstyles';
+import type { Props } from './types';
 
-const Card: FC<Props> = ({ title, extraInfo, onClick }) => {
+interface CardProps extends Props {
+  children: ReactNode | null;
+  imageSrc: string; // Agrega la prop imageSrc de tipo string
+}
+
+const Card: FC<CardProps> = ({ title, extraInfo, onClick, imageSrc }) => {
   const handleClick = useCallback(() => {
     if (onClick) {
-      onClick()
+      onClick();
     }
-  }, [onClick])
+  }, [onClick]);
 
   return (
     <Container>
@@ -26,6 +33,9 @@ const Card: FC<Props> = ({ title, extraInfo, onClick }) => {
           <Button onClick={handleClick}>Favorito</Button>
         </Header>
         <div>{title}</div>
+        <ImageContainer>
+          <Image src={imageSrc} alt={title} /> {/* Utiliza la prop imageSrc como src */}
+        </ImageContainer>
         <Footer>
           <FooterContent>
             <ExtraInfo>{extraInfo}</ExtraInfo>
@@ -33,7 +43,7 @@ const Card: FC<Props> = ({ title, extraInfo, onClick }) => {
         </Footer>
       </Content>
     </Container>
-  )
-}
+  );
+};
 
-export default memo(Card)
+export default memo(Card);
