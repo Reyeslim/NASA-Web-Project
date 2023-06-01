@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from 'react'
+import { FC, memo } from 'react'
 import { Formik } from 'formik'
 import { InitialValues, ValidationSchema } from './constant'
 import {
@@ -14,14 +14,10 @@ import {
   Link,
   Title,
 } from './loginStyles'
+import useLogic from './logic'
 
 const Login: FC = () => {
-  const handleOnSubmit = useCallback(
-    (values: { email: string; password: string }) => {
-      console.log(values)
-    },
-    []
-  )
+  const { handleOnSubmit } = useLogic()
   return (
     <Container>
       <Formik
