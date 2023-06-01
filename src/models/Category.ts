@@ -1,14 +1,14 @@
 type NasaAPODResponse = {
-    copyright?: string
-    date: string
-    explanation: string
-    hdurl: string
-    media_type: string
-    service_version: string
-    title: string
-    url: string
+  copyright?: string
+  date: string
+  explanation: string
+  hdurl: string
+  media_type: string
+  service_version: string
+  title: string
+  url: string
 }
 
 const normalizeAPODResponse = (input: NasaAPODResponse) => ({
-    title: input?.title || '',
+  title: input?.title || '',
 })
