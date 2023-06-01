@@ -16,9 +16,8 @@ const Dashboard: FC = () => {
       <DashboardContent>
         Esto es el DashboardContent
         <Button children={'Prueba-Botón'} />
-        {/* A la espera de que se hagan las cards, para reflejarlas en el Dashboard vídeo 1 en 20:10 minutos. */}
         <DashboardCards>
-          {cards.map(card => (<Card title='Esto es el título' extraInfo='Esto es extraInfo' />))}
+          {cards.map((index) => (<Card key={index} title='Esto es el título' extraInfo='Esto es extraInfo' />))}
         </DashboardCards>
 
       </DashboardContent>
