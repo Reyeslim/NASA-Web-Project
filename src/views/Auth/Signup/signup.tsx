@@ -14,19 +14,10 @@ import {
 } from './signupStyles'
 import { Formik } from 'formik'
 import { InitialValues, ValidationSchema } from './constant'
+import useLogic from './logic'
 
 const Signup: FC = () => {
-  const handleOnSubmit = useCallback(
-    (values: {
-      email: string
-      password: string
-      name: string
-      phone: string
-    }) => {
-      console.log(values)
-    },
-    []
-  )
+  const { handleOnSubmit } = useLogic()
   return (
     <Container>
       <Formik
