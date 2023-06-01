@@ -6,10 +6,10 @@ export const Container = styled.footer`
   color: #fff;
   height: auto;
   left: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
   text-align: center;
-  width: 100vw;
+  width: 100%;
 `
 
 export const Info = styled.p`
