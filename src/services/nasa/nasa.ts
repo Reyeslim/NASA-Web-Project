@@ -23,7 +23,6 @@ export const getNasaApods = async () => {
     )
 
     const data: ApodResponse[] = await response.json()
-    console.log(data)
 
     const normalizedApods = data.map(normalizeApod)
     setCachedApods(normalizedApods)

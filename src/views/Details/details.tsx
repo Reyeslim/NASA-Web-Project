@@ -1,18 +1,35 @@
-import { FC, memo } from 'react'
+import { FC, memo, useEffect, useState } from 'react'
 import {
   DetailsContainer,
   DetailsContent,
   DetailsTitle,
   DetailsExplanation,
 } from './detailsStyles'
-import type { Props } from './types'
+import { useParams } from 'react-router-dom'
+import { Apod } from '../../models/Apod'
+import { getCachedApodById } from '../../services/storage/apods'
 
-const Details: FC<Props> = ({ title, explanation }) => {
+const Details: FC = () => {
+  const { apodId } = useParams()
+  const [apod, setApod] = useState<Apod | null>(null)
+  useEffect(() => {
+    if (apodId) {
+      const retrivedApod = getCachedApodById(apodId)
+      if (retrivedApod) {
+        setApod(retrivedApod)
+      }
+    }
+  }, [])
+
+  if (!apod) {
+    return <div>NO EXISTE</div>
+  }
+
   return (
     <DetailsContainer>
       <DetailsContent>
-        <DetailsTitle>{title}</DetailsTitle>
-        <DetailsExplanation>{explanation}</DetailsExplanation>
+        <DetailsTitle>{apod.title}</DetailsTitle>
+        <DetailsExplanation>{apod.explanation}</DetailsExplanation>
       </DetailsContent>
     </DetailsContainer>
   )

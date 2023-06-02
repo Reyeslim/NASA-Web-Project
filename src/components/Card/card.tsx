@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, ReactNode } from 'react';
+import { FC, memo, useCallback, ReactNode } from 'react'
 import {
   Button,
   Container,
@@ -9,36 +9,43 @@ import {
   Header,
   ImageContainer,
   Image,
-} from './cardstyles';
-import type { Props } from './types';
+} from './cardstyles'
+import type { Props } from './types'
+import { useNavigate } from 'react-router-dom'
 
-const Card: FC<Props> = ({ title, extraInfo, onClick, imageSrc }) => {
+const Card: FC<Props> = ({ onClick, apod }) => {
+  const navigate = useNavigate()
   const handleClick = useCallback(() => {
     if (onClick) {
-      onClick();
+      onClick()
     }
-  }, [onClick]);
+  }, [onClick])
+
+  const handleGoToDetails = useCallback(() => {
+    navigate(`/apods/${apod.id}`)
+  }, [])
 
   return (
     <Container>
       <Content>
         <Header>
-          <Button onClick={handleClick}>Editar</Button>
+          <Button onClick={handleGoToDetails}>Detalles</Button>
           <Button onClick={handleClick}>Eliminar</Button>
           <Button onClick={handleClick}>Favorito</Button>
         </Header>
-        <div>{title}</div>
+        <div>{apod.title}</div>
         <ImageContainer>
-          <Image src={imageSrc} alt={title} /> {/* Utiliza la prop imageSrc como src */}
+          <Image src={apod.url} alt={apod.title} />{' '}
+          {/* Utiliza la prop imageSrc como src */}
         </ImageContainer>
         <Footer>
           <FooterContent>
-            <ExtraInfo>{extraInfo}</ExtraInfo>
+            <ExtraInfo>{apod.explanation}</ExtraInfo>
           </FooterContent>
         </Footer>
       </Content>
     </Container>
-  );
-};
+  )
+}
 
-export default memo(Card);
+export default memo(Card)

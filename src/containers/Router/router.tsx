@@ -4,6 +4,7 @@ import Dashboard from '../../views/Dashboard/dashboard'
 import Login from '../../views/Auth/Login/login'
 import Signup from '../../views/Auth/Signup/signup'
 import Perfil from '../../views/Perfil/perfil'
+import Details from '../../views/Details/details'
 
 const Router: FC = () => {
   return (
@@ -13,6 +14,7 @@ const Router: FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/apods/:apodId" element={<Details />} />
         <Route path="/*" element={<Navigate replace to="/dashboard" />} />
       </Routes>
     </BrowserRouter>

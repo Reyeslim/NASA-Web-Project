@@ -16,7 +16,6 @@ const Dashboard: FC = () => {
 
   const fetchNasaApods = useCallback(async () => {
     const apodsList = await getNasaApods()
-    console.log(apodsList)
     setApods(apodsList)
   }, [])
 
@@ -33,12 +32,7 @@ const Dashboard: FC = () => {
         <Button children={'Prueba-Botón'} />
         <DashboardCards>
           {apods.map((apod, index) => (
-            <Card
-              key={index}
-              title={apod.title}
-              extraInfo={apod.date}
-              imageSrc={apod.url}
-            />
+            <Card key={index} apod={apod} />
           ))}
         </DashboardCards>
       </DashboardContent>
