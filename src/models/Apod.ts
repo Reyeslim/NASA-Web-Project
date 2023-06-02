@@ -1,6 +1,11 @@
 import uniqid from 'uniqid'
 import type { ApodResponse } from '../services/nasa/nasa'
 
+export type ApodInput = {
+  title: string
+  url: string
+}
+
 export const normalizeApod = (input: ApodResponse) => ({
   id: uniqid(),
   title: input?.title || '',

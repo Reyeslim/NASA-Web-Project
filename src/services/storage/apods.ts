@@ -1,4 +1,4 @@
-import { Apod } from '../../models/Apod'
+import { Apod, ApodInput } from '../../models/Apod'
 
 const NASA_APODS_KEY = 'nasaApodLists'
 
@@ -16,4 +16,9 @@ export const setCachedApods = (apods: any) => {
 export const getCachedApodById = (id: string) => {
   const apods = getCachedApods()
   return apods.find((apod) => apod.id === id)
+}
+
+export const addNewApod = (data: ApodInput) => {
+  const apodList = getCachedApods()
+  setCachedApods([...apodList, data])
 }
