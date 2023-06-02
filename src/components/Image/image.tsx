@@ -5,7 +5,7 @@ import { Container, Img } from './imgStyles'
 const Image: FC<Props> = ({ src, alt }) => {
   return (
     <Container>
-      <Img src={src} alt={alt}></Img>
+      <Img src={src} alt={alt} />
     </Container>
   )
 }

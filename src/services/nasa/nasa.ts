@@ -1,36 +1,35 @@
-import { NasaAPODResponse } from '../../models/Category'
-import { getCachedCategories, setCachedCategories } from '../storage/categories'
+import { normalizeApod } from '../../models/Apod'
+import { getCachedApods, setCachedApods } from '../storage/apods'
 
-// Musta hace una promesa en el vídeo utilizando Category del category.ts
-export const getNasaCategories = async () => {
-  const savedCategories = getCachedCategories()
+const APODS_PER_REQUEST = 30
 
-  if (!savedCategories || savedCategories.length <= 0) {
-    const currentDate = new Date()
-    const endDate = new Date()
-    endDate.setDate(endDate.getDate() - 30) // Retrocede 30 días desde la fecha actual
+export type ApodResponse = {
+  copyright: string
+  date: string
+  explanation: string
+  hdurl: string
+  media_type: string
+  service_version: string
+  title: string
+  url: string
+}
 
-    const fetchedCategories = []
+export const getNasaApods = async () => {
+  const savedApods = getCachedApods()
 
-    while (currentDate >= endDate) {
-      const dateString = endDate.toISOString().split('T')[0]
-      const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${dateString}`
-      )
+  if (!savedApods || savedApods.length <= 0) {
+    const response = await fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&count=${APODS_PER_REQUEST}`
+    )
 
-      const data: NasaAPODResponse = await response.json()
+    const data: ApodResponse[] = await response.json()
+    console.log(data)
 
-      if (data.date) {
-        fetchedCategories.push(data)
-      }
+    const normalizedApods = data.map(normalizeApod)
+    setCachedApods(normalizedApods)
 
-      endDate.setDate(endDate.getDate() + 1)
-    }
-
-    setCachedCategories(fetchedCategories)
-
-    return fetchedCategories
+    return normalizedApods
   }
 
-  return savedCategories
+  return savedApods
 }

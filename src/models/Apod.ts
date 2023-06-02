@@ -1,0 +1,16 @@
+import uniqid from 'uniqid'
+import type { ApodResponse } from '../services/nasa/nasa'
+
+export const normalizeApod = (input: ApodResponse) => ({
+  id: uniqid(),
+  title: input?.title || '',
+  copyright: input?.copyright || '',
+  mediaType: input?.media_type || '',
+  serviceVersion: input?.service_version || '',
+  explanation: input?.explanation || '',
+  date: input?.date || '',
+  hdurl: input?.hdurl || '',
+  url: input?.url || '',
+})
+
+export type Apod = ReturnType<typeof normalizeApod>

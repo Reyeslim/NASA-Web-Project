@@ -5,18 +5,14 @@ import {
   DetailsTitle,
   DetailsExplanation,
 } from './detailsStyles'
-import { NasaAPODResponse } from '../../models/Category'
+import type { Props } from './types'
 
-interface DetailsProps {
-  image: NasaAPODResponse
-}
-
-const Details: FC<DetailsProps> = ({ image }) => {
+const Details: FC<Props> = ({ title, explanation }) => {
   return (
     <DetailsContainer>
       <DetailsContent>
-        <DetailsTitle>{image.title}</DetailsTitle>
-        <DetailsExplanation>{image.explanation}</DetailsExplanation>
+        <DetailsTitle>{title}</DetailsTitle>
+        <DetailsExplanation>{explanation}</DetailsExplanation>
       </DetailsContent>
     </DetailsContainer>
   )

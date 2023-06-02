@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useState } from 'react'
+import { FC, memo, useCallback, useEffect, useState } from 'react'
 import {
   DashboardContainer,
   DashboardContent,
@@ -8,20 +8,20 @@ import Header from '../../components/Header/header'
 import Button from '../../components/Button/button'
 import Footer from '../../components/Footer/footer'
 import Card from '../../components/Card/card'
-import { cards } from './constants'
-import { getNasaCategories } from '../../services/nasa/nasa'
-import { NasaAPODResponse } from '../../models/Category'
+import { getNasaApods } from '../../services/nasa/nasa'
+import { Apod } from '../../models/Apod'
 
 const Dashboard: FC = () => {
-  const [nasaImages, setNasaImages] = useState<NasaAPODResponse[]>([])
+  const [apods, setApods] = useState<Apod[]>([])
+
+  const fetchNasaApods = useCallback(async () => {
+    const apodsList = await getNasaApods()
+    console.log(apodsList)
+    setApods(apodsList)
+  }, [])
 
   useEffect(() => {
-    const fetchNasaImages = async () => {
-      const images = await getNasaCategories()
-      setNasaImages(images)
-    }
-
-    fetchNasaImages()
+    fetchNasaApods()
   }, [])
 
   return (
@@ -32,17 +32,14 @@ const Dashboard: FC = () => {
         Esto es el DashboardContent
         <Button children={'Prueba-Botón'} />
         <DashboardCards>
-          {nasaImages.map((image, index) => {
-            console.log(image.url)
-            return (
-              <Card
-                key={index}
-                title={image.title}
-                extraInfo={image.date}
-                imageSrc={image.url}
-              />
-            )
-          })}
+          {apods.map((apod, index) => (
+            <Card
+              key={index}
+              title={apod.title}
+              extraInfo={apod.date}
+              imageSrc={apod.url}
+            />
+          ))}
         </DashboardCards>
       </DashboardContent>
 
