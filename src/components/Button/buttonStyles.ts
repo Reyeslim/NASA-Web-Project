@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const CustomButton = styled.button`
-  margin-left: 10px;
-  cursor: pointer;
-      background-color: rgba(255, 129, 124, 0.59);
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 129, 124, 0.59);
     border: 2px solid coral;
     border-radius: 4px;
     border-style: ridge;
