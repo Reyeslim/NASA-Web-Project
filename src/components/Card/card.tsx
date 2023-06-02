@@ -12,12 +12,7 @@ import {
 } from './cardstyles';
 import type { Props } from './types';
 
-interface CardProps extends Props {
-  children: ReactNode | null;
-  imageSrc: string; // Agrega la prop imageSrc de tipo string
-}
-
-const Card: FC<CardProps> = ({ title, extraInfo, onClick, imageSrc }) => {
+const Card: FC<Props> = ({ title, extraInfo, onClick, imageSrc }) => {
   const handleClick = useCallback(() => {
     if (onClick) {
       onClick();
