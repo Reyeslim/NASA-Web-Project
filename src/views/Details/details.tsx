@@ -8,6 +8,7 @@ import {
 import { useParams } from 'react-router-dom'
 import { Apod } from '../../models/Apod'
 import { getCachedApodById } from '../../services/storage/apods'
+import BackArrow from '../../components/Back/backArrow'
 
 const Details: FC = () => {
   const { apodId } = useParams()
@@ -27,6 +28,7 @@ const Details: FC = () => {
 
   return (
     <DetailsContainer>
+      <BackArrow />
       <DetailsContent>
         <DetailsTitle>{apod.title}</DetailsTitle>
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>
