@@ -3,28 +3,20 @@ import styled from 'styled-components';
 export const Container = styled.div`
   border: 1px solid gray;
   border-radius: 4px;
-  width: 80%;
+  width: 90%;
   max-width: 80vw; /* Cambia el valor de max-width a 80vw */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 300px;
   margin: 40px auto;
   background-color: #dddddd; /* Color de fondo gris oscuro */
-  
-  @media (min-width: 768px) {
-    width: 70%;
-    max-width: 70vw; /* Ajusta el valor de max-width en la media query correspondiente */
-  }
-  
-  @media (min-width: 1024px) {
-    width: 60%;
-    max-width: 60vw; /* Ajusta el valor de max-width en la media query correspondiente */
-  }
-`;
+`
 
 
 export const Content = styled.div`
+ 
   padding: 16px;
   display: flex;
   flex-direction: column;

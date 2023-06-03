@@ -26,17 +26,13 @@ const Dashboard: FC = () => {
   return (
     <DashboardContainer>
       <Header />
-
       <DashboardContent>
-        Esto es el DashboardContent
-        <Button children={'Prueba-Botón'} />
         <DashboardCards>
           {apods.map((apod, index) => (
             <Card key={index} apod={apod} />
           ))}
         </DashboardCards>
       </DashboardContent>
-
       <Footer />
     </DashboardContainer>
   )
