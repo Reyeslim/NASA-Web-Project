@@ -11,6 +11,7 @@ import Card from '../../components/Card/card'
 import { getNasaApods } from '../../services/nasa/nasa'
 import { Apod } from '../../models/Apod'
 
+
 const Dashboard: FC = () => {
   const [apods, setApods] = useState<Apod[]>([])
 
