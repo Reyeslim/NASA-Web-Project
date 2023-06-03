@@ -1,11 +1,8 @@
-import { FC, memo, useCallback, ReactNode } from 'react'
+import { FC, memo, useCallback } from 'react'
 import {
   Button,
   Container,
   Content,
-  ExtraInfo,
-  Footer,
-  FooterContent,
   Header,
   ImageContainer,
   Image,
@@ -13,17 +10,12 @@ import {
 import type { Props } from './types'
 import { useNavigate } from 'react-router-dom'
 
-const Card: FC<Props> = ({ onClick, apod }) => {
+const Card: FC<Props> = ({ apod }) => {
   const navigate = useNavigate()
-  const handleClick = useCallback(() => {
-    if (onClick) {
-      onClick()
-    }
-  }, [onClick])
 
   const handleGoToDetails = useCallback(() => {
     navigate(`/apods/${apod.id}`)
-  }, [])
+  }, [apod.id, navigate])
 
   return (
     <Container>

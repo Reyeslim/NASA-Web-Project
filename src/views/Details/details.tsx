@@ -20,7 +20,7 @@ const Details: FC = () => {
         setApod(retrivedApod)
       }
     }
-  }, [])
+  }, [apodId])
 
   if (!apod) {
     return <div>NO EXISTE</div>

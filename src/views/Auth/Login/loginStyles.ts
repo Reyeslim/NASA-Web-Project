@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link as DefaultLink } from 'react-router-dom'
+import DefaultButton from '../../../components/Button/button'
 
 export const Container = styled.div``
 
@@ -60,7 +61,7 @@ export const Input = styled.input`
   color: #ffffff;
 `
 
-export const Button = styled.button`
+export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;

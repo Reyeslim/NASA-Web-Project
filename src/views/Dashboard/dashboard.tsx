@@ -5,12 +5,10 @@ import {
   DashboardCards,
 } from './dashboardStyles'
 import Header from '../../components/Header/header'
-import Button from '../../components/Button/button'
 import Footer from '../../components/Footer/footer'
 import Card from '../../components/Card/card'
 import { getNasaApods } from '../../services/nasa/nasa'
 import { Apod } from '../../models/Apod'
-
 
 const Dashboard: FC = () => {
   const [apods, setApods] = useState<Apod[]>([])
@@ -22,7 +20,7 @@ const Dashboard: FC = () => {
 
   useEffect(() => {
     fetchNasaApods()
-  }, [])
+  }, [fetchNasaApods])
 
   return (
     <DashboardContainer>
