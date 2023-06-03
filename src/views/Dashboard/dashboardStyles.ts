@@ -5,7 +5,7 @@ export const DashboardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%; /* Ajusta el ancho del contenedor según tus necesidades */
-  background-color: #333333; /* Color de fondo gris oscuro */
+  
 `;
 
 export const DashboardContent = styled.div`

@@ -1,17 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const VideoContainer = styled.div`
-  position: relative;
+export const VideoBackgroundContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
+  z-index: -1;
+`;
 
 export const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`
+`;
