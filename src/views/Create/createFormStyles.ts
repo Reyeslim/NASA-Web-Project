@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { Link as DefaultLink } from 'react-router-dom'
-import DefaultButton from '../../../components/Button/button'
 
 export const Container = styled.div``
 
@@ -22,35 +20,24 @@ export const Form = styled.form`
   border: none;
 `
 
-export const FormContent = styled.div`
-  /* padding: 10px; */
-`
-
-export const Title = styled.h3`
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 42px;
-  text-align: center;
-`
-
 export const InputController = styled.div`
   display: flex;
   flex-flow: column;
 
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 `
 
 export const Label = styled.label`
-  margin-top: 10px;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
 `
 
 export const Input = styled.input`
-  height: 30px;
+  height: 50px;
   width: 95%;
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
@@ -61,8 +48,10 @@ export const Input = styled.input`
   color: #ffffff;
 `
 
-export const Button = styled(DefaultButton)`
-  margin-top: 30px;
+export const InputImage = styled.input``
+
+export const Button = styled.button`
+  margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
   color: #080710;
@@ -71,29 +60,4 @@ export const Button = styled(DefaultButton)`
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-`
-export const InputError = styled.span`
-  color: red;
-  font-size: 12px;
-  line-height: 0.9;
-  margin-top: 8px;
-`
-export const Info = styled.p`
-  color: #dff9ff;
-  display: block;
-  font-size: 14px;
-  margin-top: 16px;
-  text-align: center;
-`
-
-export const Link = styled(DefaultLink)`
-  color: #dff9ff;
-  font-size: 14px;
-  margin-top: 16px;
-  text-align: center;
-  transition: color 200ms ease-in-out;
-
-  &:hover {
-    color: #99c6f8;
-  }
 `
