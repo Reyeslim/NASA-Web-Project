@@ -30,19 +30,12 @@ const Card: FC<Props> = ({ onClick, apod }) => {
       <Content>
         <Header>
           <Button onClick={handleGoToDetails}>Detalles</Button>
-          <Button onClick={handleClick}>Eliminar</Button>
-          <Button onClick={handleClick}>Favorito</Button>
         </Header>
         <div>{apod.title}</div>
         <ImageContainer>
           <Image src={apod.url} alt={apod.title} />{' '}
           {/* Utiliza la prop imageSrc como src */}
         </ImageContainer>
-        <Footer>
-          <FooterContent>
-            <ExtraInfo>{apod.explanation}</ExtraInfo>
-          </FooterContent>
-        </Footer>
       </Content>
     </Container>
   )
