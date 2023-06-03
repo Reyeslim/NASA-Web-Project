@@ -4,6 +4,10 @@ import {
   DetailsContent,
   DetailsTitle,
   DetailsExplanation,
+  ButtonContainer,
+  Buttoneditar,
+  Buttonfavorito,
+  Buttoneliminar,
 } from './detailsStyles'
 import { useParams } from 'react-router-dom'
 import { Apod } from '../../models/Apod'
@@ -26,9 +30,20 @@ const Details: FC = () => {
     return <div>NO EXISTE</div>
   }
 
+  const handleButtonClick = () => {
+   
+  }
+
   return (
     <DetailsContainer>
       <BackArrow />
+
+      <ButtonContainer>
+        <Buttoneditar onClick={handleButtonClick}>Editar</Buttoneditar>
+        <Buttonfavorito onClick={handleButtonClick}>Favoritos</Buttonfavorito>
+        <Buttoneliminar onClick={handleButtonClick}>Eliminar</Buttoneliminar>
+      </ButtonContainer>
+
       <DetailsContent>
         <DetailsTitle>{apod.title}</DetailsTitle>
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>
