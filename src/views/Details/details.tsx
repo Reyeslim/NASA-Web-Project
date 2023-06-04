@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useState } from 'react';
+import { FC, memo, useCallback, useEffect, useState } from 'react'
 import {
   DetailsContainer,
   DetailsContent,
@@ -8,28 +8,48 @@ import {
   Buttonfavorito,
   Buttoneditar,
   Buttoneliminar,
-} from './detailsStyles';
-import { useParams } from 'react-router-dom';
-import { Apod } from '../../models/Apod';
-import { getCachedApodById } from '../../services/storage/apods';
-import BackArrow from '../../components/Back/backArrow';
+} from './detailsStyles'
+import { useParams } from 'react-router-dom'
+import { Apod } from '../../models/Apod'
+import {
+  getCachedApodById,
+  getCachedApods,
+  setCachedApods,
+} from '../../services/storage/apods'
+import BackArrow from '../../components/Back/backArrow'
 
 const Details: FC = () => {
-  const { apodId } = useParams();
-  const [apod, setApod] = useState<Apod | null>(null);
-  
-  const [favoritos, setFavoritos] = useState<{ title: string; explanation: string }[]>([]);  // 1 declaro favoritos
-  
-  useEffect(() => {
-    if (apodId) {
-      const retrievedApod = getCachedApodById(apodId);
-      if (retrievedApod) {
-        setApod(retrievedApod);
+  const { apodId } = useParams()
+  const [apod, setApod] = useState<Apod | null>(null)
+
+  const handleRemoveApod = useCallback(
+    (apodTitle: string) => {
+      if (apodId) {
+        const obtainedApod = getCachedApods()
+        const filteredApods = obtainedApod.filter(
+          (apod) => apod.title !== apodTitle
+        )
+        setCachedApods(filteredApods)
       }
-    }
-  }, [apodId]);
+    },
+    [apodId]
+  )
+
+  const [favoritos, setFavoritos] = useState<
+    { title: string; explanation: string }[]
+  >([]) // 1 declaro favoritos
 
   useEffect(() => {
+    if (apodId) {
+      const retrievedApod = getCachedApodById(apodId)
+      if (retrievedApod) {
+        setApod(retrievedApod)
+      }
+    }
+  }, [apodId])
+
+  useEffect(() => {
+
     const favoritosGuardados = localStorage.getItem('favoritos');
     if (favoritosGuardados) {
       const favoritosParseados = JSON.parse(favoritosGuardados);
@@ -37,15 +57,18 @@ const Details: FC = () => {
     }
   }, []);
 
-  useEffect(() => {  // 3 almaceno los favoritos en el LocalStorage 
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
-  }, [favoritos]);
+
+  useEffect(() => {
+    // 3 almaceno los favoritos en el LocalStorage
+    localStorage.setItem('favoritos', JSON.stringify(favoritos))
+  }, [favoritos])
 
   if (!apod) {
-    return <div>NO EXISTE</div>;
+    return <div>NO EXISTE</div>
   }
 
   const handleFavoritoClick = () => {
+
     const nuevoFavorito = { title: apod.title, explanation: apod.explanation };
   
     // Verificar si el favorito ya está presente en la lista
@@ -59,14 +82,8 @@ const Details: FC = () => {
   };
 
   const handleEditarClick = () => {
-   
-    console.log("Botón 'Editar' clickeado");
-  };
-
-  const handleEliminarClick = () => {
-   
-    console.log("Botón 'Eliminar' clickeado");
-  };
+    console.log("Botón 'Editar' clickeado")
+  }
 
   return (
     <DetailsContainer>
@@ -75,7 +92,9 @@ const Details: FC = () => {
       <ButtonContainer>
         <Buttoneditar onClick={handleEditarClick}>Editar</Buttoneditar>
         <Buttonfavorito onClick={handleFavoritoClick}>Favoritos</Buttonfavorito>
-        <Buttoneliminar onClick={handleEliminarClick}>Eliminar</Buttoneliminar>
+        <Buttoneliminar onClick={() => handleRemoveApod(apod.title)}>
+          Eliminar
+        </Buttoneliminar>
       </ButtonContainer>
 
       <DetailsContent>
@@ -83,7 +102,7 @@ const Details: FC = () => {
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>
       </DetailsContent>
     </DetailsContainer>
-  );
-};
+  )
+}
 
-export default memo(Details);
+export default memo(Details)
