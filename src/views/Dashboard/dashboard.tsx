@@ -11,8 +11,6 @@ import { getNasaApods } from '../../services/nasa/nasa'
 import { Apod } from '../../models/Apod'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
 
-
-
 const Dashboard: FC = () => {
   const [apods, setApods] = useState<Apod[]>([])
 
@@ -25,10 +23,9 @@ const Dashboard: FC = () => {
     fetchNasaApods()
   }, [fetchNasaApods])
 
-
   return (
     <DashboardContainer>
-    <VideoBackground videoSrc="/earth.mp4" />
+      <VideoBackground videoSrc="/earth.mp4" />
       <Header />
       <DashboardContent>
         <DashboardCards>

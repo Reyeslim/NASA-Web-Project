@@ -1,9 +1,6 @@
 import { FC, memo } from 'react'
-import { useParams } from 'react-router-dom'
 
 const EditForm: FC = () => {
-  const { apodId } = useParams()
-  console.log(apodId)
   return (
     // container
     <div>
