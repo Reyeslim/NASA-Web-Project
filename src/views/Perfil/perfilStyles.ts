@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const PerfilContainer = styled.div`
+
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +12,7 @@ export const PerfilContainer = styled.div`
   padding: 20px;
   border-radius: 8px;
   background-color: #f5f5f5;
-  margin: 100px auto;
+  margin: 180px auto;
 `
 
 export const Avatar = styled.div`
@@ -22,6 +24,7 @@ export const Avatar = styled.div`
 `
 
 export const InfoContainer = styled.div`
+
   display: flex;
   flex-direction: column;
   text-align: center;

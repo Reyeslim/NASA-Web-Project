@@ -13,5 +13,5 @@ export const Container = styled.footer`
 `
 
 export const Info = styled.p`
-  font-size: 16px;
+  font-size: 12px;
 `

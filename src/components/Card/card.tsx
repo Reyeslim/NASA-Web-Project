@@ -6,9 +6,12 @@ import {
   Header,
   ImageContainer,
   Image,
+  Title, 
 } from './cardstyles'
 import type { Props } from './types'
 import { useNavigate } from 'react-router-dom'
+
+
 
 const Card: FC<Props> = ({ apod }) => {
   const navigate = useNavigate()
@@ -17,13 +20,16 @@ const Card: FC<Props> = ({ apod }) => {
     navigate(`/apods/${apod.id}`)
   }, [apod.id, navigate])
 
+
+
+
   return (
     <Container>
       <Content>
         <Header>
           <Button onClick={handleGoToDetails}>Detalles</Button>
         </Header>
-        <div>{apod.title}</div>
+        <Title>{apod.title}</Title> {/* Utiliza el componente de título */}
         <ImageContainer>
           <Image src={apod.url} alt={apod.title} />{' '}
           {/* Utiliza la prop imageSrc como src */}

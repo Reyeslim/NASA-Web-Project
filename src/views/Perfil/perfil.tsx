@@ -15,6 +15,8 @@ interface PerfilProps {
   email?: string
 }
 
+
+
 const Perfil: React.FC<PerfilProps> = ({ nombre, edad, email }) => {
   return (
     <>
