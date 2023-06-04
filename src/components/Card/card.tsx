@@ -6,12 +6,10 @@ import {
   Header,
   ImageContainer,
   Image,
-  Title, 
+  Title,
 } from './cardstyles'
 import type { Props } from './types'
 import { useNavigate } from 'react-router-dom'
-
-
 
 const Card: FC<Props> = ({ apod }) => {
   const navigate = useNavigate()
@@ -19,9 +17,6 @@ const Card: FC<Props> = ({ apod }) => {
   const handleGoToDetails = useCallback(() => {
     navigate(`/apods/${apod.id}`)
   }, [apod.id, navigate])
-
-
-
 
   return (
     <Container>
