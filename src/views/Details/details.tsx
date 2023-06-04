@@ -29,12 +29,13 @@ const Details: FC = () => {
     }
   }, [apodId]);
 
-  useEffect(() => {  //  4 cargar los favoritos desde el LocalStorage cuando el componente se monta inicialmente ( esta parte creo que es la uqe nos hace falta para el perfil lo vemos juntos)
+  useEffect(() => {
     const favoritosGuardados = localStorage.getItem('favoritos');
     if (favoritosGuardados) {
-      setFavoritos(JSON.parse(favoritosGuardados));
+      const favoritosParseados = JSON.parse(favoritosGuardados);
+      setFavoritos((prevFavoritos) => [...prevFavoritos, ...favoritosParseados]);
     }
-  }, []);  
+  }, []);
 
   useEffect(() => {  // 3 almaceno los favoritos en el LocalStorage 
     localStorage.setItem('favoritos', JSON.stringify(favoritos));
@@ -44,9 +45,17 @@ const Details: FC = () => {
     return <div>NO EXISTE</div>;
   }
 
-  const handleFavoritoClick = () => {  // 2 al hacer click agrego el título y la explicación a favoritos
+  const handleFavoritoClick = () => {
     const nuevoFavorito = { title: apod.title, explanation: apod.explanation };
-    setFavoritos([...favoritos, nuevoFavorito]);
+  
+    // Verificar si el favorito ya está presente en la lista
+    const favoritoExistente = favoritos.some(
+      (favorito) => favorito.title === nuevoFavorito.title
+    );
+  
+    if (!favoritoExistente) {
+      setFavoritos((prevFavoritos) => [...prevFavoritos, nuevoFavorito]);
+    }
   };
 
   const handleEditarClick = () => {
