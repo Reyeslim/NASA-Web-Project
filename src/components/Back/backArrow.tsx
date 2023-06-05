@@ -8,7 +8,8 @@ const BackArrow: FC = () => {
     const goBack = () => {
         navigate(-1);
     }
+    
+    return (<BackButton onClick={goBack}>Back</BackButton>)
 
-    return (<BackButton onClick={goBack}>back</BackButton>)
 }
 export default memo(BackArrow)

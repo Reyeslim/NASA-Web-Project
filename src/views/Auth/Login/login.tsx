@@ -21,7 +21,7 @@ const Login: FC = () => {
   const { handleOnSubmit } = useLogic()
   return (
     <Container>
-            <VideoBackground videoSrc="/earth.mp4" />
+      <VideoBackground videoSrc="/earth.mp4" />
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
@@ -30,9 +30,9 @@ const Login: FC = () => {
         {({ errors, handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
             <FormContent>
-              <Title>Inicia sesión</Title>
+              <Title>Ready to begin our APOD journey?</Title>
               <InputController>
-                <Label>Correo Electrónico</Label>
+                <Label>Email</Label>
                 <Input
                   type="email"
                   name="email"
@@ -42,7 +42,7 @@ const Login: FC = () => {
                 {errors?.email && <InputError>{errors.email}</InputError>}
               </InputController>
               <InputController>
-                <Label>Contraseña</Label>
+                <Label>Password</Label>
                 <Input
                   type="password"
                   name="password"
@@ -51,10 +51,10 @@ const Login: FC = () => {
                 />
                 {errors?.password && <InputError>{errors.password}</InputError>}
               </InputController>
-              <Button type="submit">Inicia sesión</Button>
+              <Button type="submit">Log in</Button>
               <Info>
-                ¿Todavía no te has registrado?{' '}
-                <Link to="/signup">Regístrate aquí</Link>
+                Don't have an account yet? {' '}
+                <Link to="/signup">Sign up here </Link>
               </Info>
             </FormContent>
           </Form>

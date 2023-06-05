@@ -4,14 +4,14 @@ export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Ajusta el ancho del contenedor según tus necesidades */
+  width: 100%;
 `
 
 export const DashboardContent = styled.div`
-  width: 80%; /* Ajusta el ancho según tus necesidades */
+  width: 80%; 
   margin-top: 20px;
-  margin-left: auto; /* Centra el contenido horizontalmente */
-  margin-right: auto; /* Centra el contenido horizontalmente */
+  margin-left: auto;
+  margin-right: auto;
 `
 
 export const DashboardCards = styled.div`
