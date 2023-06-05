@@ -8,6 +8,7 @@ import {
 } from './perfilStyles'
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
+import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 interface PerfilProps {
   nombre?: string
@@ -21,7 +22,7 @@ const Perfil: React.FC<PerfilProps> = ({ nombre, edad, email }) => {
   return (
     <>
       <Header />
-
+      <VideoBackground videoSrc="/earth.mp4" />
       <PerfilContainer>
         <Avatar />
         <InfoContainer>

@@ -15,11 +15,13 @@ import {
 import { Formik } from 'formik'
 import { InitialValues, ValidationSchema } from './constant'
 import useLogic from './logic'
+import VideoBackground from '../../../components/VideoBackground/videoBackground'
 
 const Signup: FC = () => {
   const { handleOnSubmit } = useLogic()
   return (
     <Container>
+      <VideoBackground videoSrc="/earth.mp4" /> 
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
