@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import DefaultButton from '../../components/Button/button'
 
 export const Container = styled.div``
 
@@ -50,7 +51,7 @@ export const Input = styled.input`
 
 export const InputImage = styled.input``
 
-export const Button = styled.button`
+export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
