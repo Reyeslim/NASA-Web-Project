@@ -29,47 +29,76 @@ export const DetailsExplanation = styled.p`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 `
 
 export const Buttoneditar = styled.button`
-  background-color: #3f51b5;
+  background-color: transparent;
   color: white;
+  margin-right: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 340px;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #303f9f;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3f51b5;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3f51b5;
   }
 `
 
 export const Buttonfavorito = styled.button`
-  background-color: #3f51b5;
+  background-color: transparent;
   color: white;
   padding: 10px 20px;
   border: none;
+  margin-right: 10px;
   border-radius: 4px;
   cursor: pointer;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #303f9f;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3f51b5;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3f51b5;
   }
 `
 
 export const Buttoneliminar = styled.button`
-  background-color: #3f51b5;
+  background-color: transparent;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+   margin-right: 10px;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #303f9f;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3f51b5;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3f51b5;
   }
 `

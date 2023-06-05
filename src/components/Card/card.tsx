@@ -31,7 +31,8 @@ const Card: FC<Props> = ({ apod, onRemove }) => {
     <Container>
       <Content>
         <Header>
-          <Button onClick={handleGoToDetails}>Details</Button>
+
+          <Button onClick={handleGoToDetails}>DETAILS</Button>
           <Button onClick={handleToggleFavorites}>
             {isFav ? 'Remove Fav' : 'Add Fav'}
           </Button>

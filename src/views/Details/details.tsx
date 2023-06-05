@@ -67,9 +67,10 @@ const Details: FC = () => {
 
   return (
     <DetailsContainer>
-      <BackArrow />
       <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
+
+        <BackArrow />
         <Buttoneditar onClick={handleEditarClick}>Edit</Buttoneditar>
         <Buttonfavorito onClick={handleToggleFavorites}>
           {isFav ? 'Remove Fav' : 'Add Fav'}
