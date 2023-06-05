@@ -9,16 +9,16 @@ const EditForm: FC = () => {
         {/* InputController */}
         <div>
           {/* Label */}
-          <label>Nombre de la entidad</label>
-          <input type="text" />
+          <label htmlFor='name'>Entity name</label>
+          <input id='name' type="text" />
         </div>
         <div>
-          <label>Fecha</label>
-          <input type="date" />
+          <label htmlFor='date'>Date</label>
+          <input id='date' type="date" />
         </div>
         <div>
-          <label>Descripción</label>
-          <input type="text" />
+          <label htmlFor='description'>Description</label>
+          <input id='description' type="text" />
         </div>
       </form>
     </div>

@@ -23,15 +23,15 @@ const CreateForm: FC = () => {
       >
         <Form>
           <InputController>
-            <Label>Título</Label>
+            <Label>Tittle</Label>
             <Input type="text" />
           </InputController>
           <InputController>
-            <Label>Descripción</Label>
+            <Label>Description</Label>
             <Input type="text" />
           </InputController>
           <InputController>
-            <Label>Imagen</Label>
+            <Label>Image</Label>
             <InputImage type="file" />
           </InputController>
           <Button type="submit">Crear Apod</Button>

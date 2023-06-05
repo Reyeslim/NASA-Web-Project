@@ -70,12 +70,12 @@ const Details: FC = () => {
       <BackArrow />
       <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
-        <Buttoneditar onClick={handleEditarClick}>Editar</Buttoneditar>
+        <Buttoneditar onClick={handleEditarClick}>Edit</Buttoneditar>
         <Buttonfavorito onClick={handleToggleFavorites}>
           {isFav ? 'Remove Fav' : 'Add Fav'}
         </Buttonfavorito>
         <Buttoneliminar onClick={() => handleRemoveApod(apod.title)}>
-          Eliminar
+          Delete
         </Buttoneliminar>
       </ButtonContainer>
 
