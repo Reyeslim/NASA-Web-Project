@@ -4,4 +4,5 @@ export type Props = {
   isDetails?: boolean
   onClick?: () => void
   apod: Apod
+  onRemove: (apodId: string) => void
 }
