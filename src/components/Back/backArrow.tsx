@@ -9,6 +9,6 @@ const BackArrow: FC = () => {
         navigate(-1);
     }
 
-    return (<BackButton onClick={goBack}></BackButton>)
+    return (<BackButton onClick={goBack}>back</BackButton>)
 }
 export default memo(BackArrow)

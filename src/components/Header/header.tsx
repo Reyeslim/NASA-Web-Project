@@ -24,8 +24,8 @@ const Header: FC = () => {
     <Container>
       <ButtonContainer>
         <Button onClick={handleReset}>RESET</Button>
-        <Button onClick={handlePerfilClick}>PERFIL</Button>
-        <Button onClick={handleLogout}>CERRAR</Button>
+        <Button onClick={handlePerfilClick}>PROFILE</Button>
+        <Button onClick={handleLogout}>LOGOUT</Button>
       </ButtonContainer>
     </Container>
   )

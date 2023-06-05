@@ -42,7 +42,7 @@ const Dashboard: FC = () => {
       <VideoBackground videoSrc="/earth.mp4" />
       <Header />
       <DashboardContent>
-        <Button onClick={handleGoToCreateForm}>CREAR NUEVA ENTIDAD</Button>
+        <Button onClick={handleGoToCreateForm}>CREATE NEW ENTITY</Button>
         <DashboardCards>
           {apods.map((apod, index) => (
             <Card key={index} apod={apod} />

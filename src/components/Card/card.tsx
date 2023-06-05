@@ -22,7 +22,7 @@ const Card: FC<Props> = ({ apod }) => {
     <Container>
       <Content>
         <Header>
-          <Button onClick={handleGoToDetails}>Detalles</Button>
+          <Button onClick={handleGoToDetails}>DETAILS</Button>
         </Header>
         <Title>{apod.title}</Title> {/* Utiliza el componente de título */}
         <ImageContainer>
