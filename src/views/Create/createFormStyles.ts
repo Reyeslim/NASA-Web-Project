@@ -49,8 +49,6 @@ export const Input = styled.input`
   color: #ffffff;
 `
 
-export const InputImage = styled.input``
-
 export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;

@@ -5,37 +5,53 @@ import {
   Form,
   Input,
   InputController,
-  InputImage,
   Label,
 } from './createFormStyles'
 import { Formik } from 'formik'
 import { InitialValues, ValidationSchema } from './constants'
+import useLogic from './logic'
 
 const CreateForm: FC = () => {
+  const { handleCreate } = useLogic()
   return (
     <Container>
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
-        onSubmit={(values) => {
-          console.log(values)
-        }}
+        onSubmit={handleCreate}
       >
-        <Form>
-          <InputController>
-            <Label>Título</Label>
-            <Input type="text" />
-          </InputController>
-          <InputController>
-            <Label>Descripción</Label>
-            <Input type="text" />
-          </InputController>
-          <InputController>
-            <Label>Imagen</Label>
-            <InputImage type="file" />
-          </InputController>
-          <Button type="submit">Crear Apod</Button>
-        </Form>
+        {({ handleSubmit, handleChange, values }) => (
+          <Form onSubmit={handleSubmit}>
+            <InputController>
+              <Label>Título</Label>
+              <Input
+                type="text"
+                name="title"
+                onChange={handleChange}
+                value={values.title}
+              />
+            </InputController>
+            <InputController>
+              <Label>Descripción</Label>
+              <Input
+                type="text"
+                name="explanation"
+                onChange={handleChange}
+                value={values.explanation}
+              />
+            </InputController>
+            <InputController>
+              <Label>Imagen</Label>
+              <Input
+                type="text"
+                name="url"
+                onChange={handleChange}
+                value={values.url}
+              />
+            </InputController>
+            <Button type="submit">Crear Apod</Button>
+          </Form>
+        )}
       </Formik>
     </Container>
   )
