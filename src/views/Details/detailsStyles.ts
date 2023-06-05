@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import DefaultButton from '../../components/Button/button'
 
 export const DetailsContainer = styled.div`
   display: flex;
@@ -7,7 +6,7 @@ export const DetailsContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #333333;
+  
 `
 
 export const DetailsContent = styled.div`
@@ -62,7 +61,7 @@ export const Buttonfavorito = styled.button`
   }
 `
 
-export const Buttoneliminar = styled(DefaultButton)`
+export const Buttoneliminar = styled.button`
   background-color: #3f51b5;
   color: white;
   padding: 10px 20px;

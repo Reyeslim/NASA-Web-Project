@@ -17,6 +17,7 @@ import {
   setCachedApods,
 } from '../../services/storage/apods'
 import BackArrow from '../../components/Back/backArrow'
+import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 const Details: FC = () => {
   const { apodId } = useParams()
@@ -49,12 +50,14 @@ const Details: FC = () => {
   }, [apodId])
 
   useEffect(() => {
-    //  4 cargar los favoritos desde el LocalStorage cuando el componente se monta inicialmente ( esta parte creo que es la uqe nos hace falta para el perfil lo vemos juntos)
-    const favoritosGuardados = localStorage.getItem('favoritos')
+
+    const favoritosGuardados = localStorage.getItem('favoritos');
     if (favoritosGuardados) {
-      setFavoritos(JSON.parse(favoritosGuardados))
+      const favoritosParseados = JSON.parse(favoritosGuardados);
+      setFavoritos((prevFavoritos) => [...prevFavoritos, ...favoritosParseados]);
     }
-  }, [])
+  }, []);
+
 
   useEffect(() => {
     // 3 almaceno los favoritos en el LocalStorage
@@ -66,10 +69,18 @@ const Details: FC = () => {
   }
 
   const handleFavoritoClick = () => {
-    // 2 al hacer click agrego el título y la explicación a favoritos
-    const nuevoFavorito = { title: apod.title, explanation: apod.explanation }
-    setFavoritos([...favoritos, nuevoFavorito])
-  }
+
+    const nuevoFavorito = { title: apod.title, explanation: apod.explanation };
+  
+    // Verificar si el favorito ya está presente en la lista
+    const favoritoExistente = favoritos.some(
+      (favorito) => favorito.title === nuevoFavorito.title
+    );
+  
+    if (!favoritoExistente) {
+      setFavoritos((prevFavoritos) => [...prevFavoritos, nuevoFavorito]);
+    }
+  };
 
   const handleEditarClick = () => {
     console.log("Botón 'Editar' clickeado")
@@ -78,7 +89,7 @@ const Details: FC = () => {
   return (
     <DetailsContainer>
       <BackArrow />
-
+      <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
         <Buttoneditar onClick={handleEditarClick}>Editar</Buttoneditar>
         <Buttonfavorito onClick={handleFavoritoClick}>Favoritos</Buttonfavorito>
