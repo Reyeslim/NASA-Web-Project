@@ -17,6 +17,7 @@ import {
   setCachedApods,
 } from '../../services/storage/apods'
 import BackArrow from '../../components/Back/backArrow'
+import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 const Details: FC = () => {
   const { apodId } = useParams()
@@ -88,7 +89,7 @@ const Details: FC = () => {
   return (
     <DetailsContainer>
       <BackArrow />
-
+      <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
         <Buttoneditar onClick={handleEditarClick}>Editar</Buttoneditar>
         <Buttonfavorito onClick={handleFavoritoClick}>Favoritos</Buttonfavorito>

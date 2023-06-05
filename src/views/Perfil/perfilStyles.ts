@@ -11,7 +11,7 @@ export const PerfilContainer = styled.div`
   height: 300px;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.2);
   margin: 180px auto;
 `
 
@@ -36,9 +36,9 @@ export const InfoItem = styled.div`
 `
 
 export const AdditionalContainer = styled.div`
-  background-color: #f5f5f5;
+background-color: rgba(245, 245, 245, 0.2);
   padding: 40px;
   border-radius: 8px;
-  margin: 40px auto;
+  margin: 40px 150px;
   height: 300px;
 `
