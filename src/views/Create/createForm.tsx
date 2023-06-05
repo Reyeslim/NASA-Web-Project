@@ -23,7 +23,7 @@ const CreateForm: FC = () => {
         {({ handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
             <InputController>
-              <Label>Título</Label>
+              <Label>Title</Label>
               <Input
                 type="text"
                 name="title"
@@ -32,7 +32,7 @@ const CreateForm: FC = () => {
               />
             </InputController>
             <InputController>
-              <Label>Descripción</Label>
+              <Label>Description</Label>
               <Input
                 type="text"
                 name="explanation"
@@ -41,7 +41,7 @@ const CreateForm: FC = () => {
               />
             </InputController>
             <InputController>
-              <Label>Imagen</Label>
+              <Label>Image</Label>
               <Input
                 type="text"
                 name="url"

@@ -27,10 +27,10 @@ const Perfil: React.FC<PerfilProps> = ({ nombre, edad, email }) => {
         <Avatar />
         <InfoContainer>
           <InfoItem>
-            <strong>Nombre:</strong> {nombre}
+            <strong>Name:</strong> {nombre}
           </InfoItem>
           <InfoItem>
-            <strong>Edad:</strong> {edad}
+            <strong>Age:</strong> {edad}
           </InfoItem>
           <InfoItem>
             <strong>Email:</strong> {email}

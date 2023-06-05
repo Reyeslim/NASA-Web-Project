@@ -2,18 +2,15 @@ import styled from 'styled-components'
 
 export const WelcomeDiv = styled.div`
   width: 100%;
-  height: 100%; /* Ajusta el ancho según tus necesidades */
+  height: 100%;
   margin-top: 20px;
-  margin-left: auto; /* Centra el contenido horizontalmente */
-  margin-right: auto; /* Centra el contenido horizontalmente */
+  margin-left: auto; 
+  margin-right: auto;
 `;
 
 export const WelcomeGif = styled.div`
-  /* width: 100%;
-  height: 100%; Ajusta el ancho según tus necesidades */
-  
-  margin-top: 80px;
-  margin-left: auto; /* Centra el contenido horizontalmente */
-  margin-right: auto; /* Centra el contenido horizontalmente */
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 

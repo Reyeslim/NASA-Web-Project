@@ -7,20 +7,20 @@ import { DashboardContainer } from "../Dashboard/dashboardStyles";
 const Welcome: FC = () => {
 
     return (
-        <DashboardContainer>
-            {/* <VideoBackground videoSrc="/earth.mp4" /> */}
+        <WelcomeDiv>
             <Header />
 
-            <WelcomeDiv>
 
-                <WelcomeGif>
-                    <h1>Bienvenido al maravilloso viaje por la APOD</h1>
-                    <img src="https://usagif.com/wp-content/uploads/gif/outerspace-58.gif" title="Universe"></img>
-                </WelcomeGif>
-            </WelcomeDiv>
+
+            <WelcomeGif>
+                <h1>Welcome to the wonderful journey through APOD</h1>
+                <h3>(Astronomy Picture of the Day)</h3>
+                <img src="https://usagif.com/wp-content/uploads/gif/outerspace-58.gif" title="Universe"></img>
+            </WelcomeGif>
+
 
             <Footer />
-        </DashboardContainer>
+        </WelcomeDiv>
     )
 }
 

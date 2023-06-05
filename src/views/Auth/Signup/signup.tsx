@@ -21,7 +21,7 @@ const Signup: FC = () => {
   const { handleOnSubmit } = useLogic()
   return (
     <Container>
-      <VideoBackground videoSrc="/earth.mp4" /> 
+      <VideoBackground videoSrc="/earth.mp4" />
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
@@ -30,9 +30,9 @@ const Signup: FC = () => {
         {({ errors, handleSubmit, handleChange, values }) => (
           <Form onSubmit={handleSubmit}>
             <FormContent>
-              <Title>Crear cuenta</Title>
+              <Title>Create an account</Title>
               <InputController>
-                <Label>Nombre</Label>
+                <Label>Name</Label>
                 <Input
                   type="text"
                   name="name"
@@ -42,7 +42,7 @@ const Signup: FC = () => {
                 {errors?.name && <InputError>{errors.name}</InputError>}
               </InputController>
               <InputController>
-                <Label>Teléfono</Label>
+                <Label>Phone number</Label>
                 <Input
                   type="tel"
                   name="phone"
@@ -52,7 +52,7 @@ const Signup: FC = () => {
                 {errors?.phone && <InputError>{errors.phone}</InputError>}
               </InputController>
               <InputController>
-                <Label>Correo Electrónico</Label>
+                <Label>Email</Label>
                 <Input
                   type="email"
                   name="email"
@@ -62,7 +62,7 @@ const Signup: FC = () => {
                 {errors?.email && <InputError>{errors.email}</InputError>}
               </InputController>
               <InputController>
-                <Label>Contraseña</Label>
+                <Label>Password</Label>
                 <Input
                   type="password"
                   name="password"
@@ -71,9 +71,9 @@ const Signup: FC = () => {
                 />
                 {errors?.password && <InputError>{errors.password}</InputError>}
               </InputController>
-              <Button type="submit">Crear cuenta</Button>
+              <Button type="submit">Register</Button>
               <Info>
-                ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
+                Already have an account? <Link to="/login">Log in now</Link>
               </Info>
             </FormContent>
           </Form>
