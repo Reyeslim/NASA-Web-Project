@@ -62,7 +62,7 @@ const Details: FC = () => {
   }, [favoritos])
 
   if (!apod) {
-    return <div>NO EXISTE</div>
+    return <div>ERROR 404 NOT FOUND</div>
   }
 
   const handleFavoritoClick = () => {

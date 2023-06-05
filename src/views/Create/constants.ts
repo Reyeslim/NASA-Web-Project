@@ -1,14 +1,10 @@
-import { number, object, string } from 'yup'
+import { object, string } from 'yup'
 export const InitialValues = {
-  name: '',
-  phone: '',
-  email: '',
-  password: '',
+  title: '',
+  url: '',
 }
 
 export const ValidationSchema = object({
-  name: string(),
-  phone: number(),
-  email: string(),
-  password: string(),
+  title: string(),
+  url: string(),
 })

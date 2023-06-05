@@ -34,13 +34,7 @@ const CreateForm: FC = () => {
             <Label>Imagen</Label>
             <InputImage type="file" />
           </InputController>
-          <Button
-            onClick={() => {
-              console.log('subimos')
-            }}
-          >
-            Crear Apod
-          </Button>
+          <Button onClick={() => console.log('creamos')}>Crear Apod</Button>
         </Form>
       </Formik>
     </Container>
