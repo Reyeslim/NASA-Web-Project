@@ -17,8 +17,8 @@ const CreateForm: FC = () => {
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
-        onSubmit={() => {
-          console.log('subimos')
+        onSubmit={(values) => {
+          console.log(values)
         }}
       >
         <Form>
@@ -34,7 +34,7 @@ const CreateForm: FC = () => {
             <Label>Imagen</Label>
             <InputImage type="file" />
           </InputController>
-          <Button onClick={() => console.log('creamos')}>Crear Apod</Button>
+          <Button type="submit">Crear Apod</Button>
         </Form>
       </Formik>
     </Container>

@@ -12,6 +12,7 @@ import { getNasaApods } from '../../services/nasa/nasa'
 import { Apod } from '../../models/Apod'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
 import { useNavigate } from 'react-router-dom'
+import { getCachedApods, setCachedApods } from '../../services/storage/apods'
 
 const Dashboard: FC = () => {
   const [apods, setApods] = useState<Apod[]>([])
@@ -33,6 +34,15 @@ const Dashboard: FC = () => {
     fetchNasaApods()
   }, [fetchNasaApods])
 
+  const handleRemoveApod = useCallback((apodId: string) => {
+    const currentApods = getCachedApods()
+    const filteredApods = currentApods.filter(
+      (cachedApod) => apodId !== cachedApod.id
+    )
+    setCachedApods(filteredApods)
+    setApods(filteredApods)
+  }, [])
+
   if (isLoading) {
     return <div>CARGANDO...</div>
   }
@@ -45,7 +55,7 @@ const Dashboard: FC = () => {
         <Button onClick={handleGoToCreateForm}>CREAR NUEVA ENTIDAD</Button>
         <DashboardCards>
           {apods.map((apod, index) => (
-            <Card key={index} apod={apod} />
+            <Card key={index} apod={apod} onRemove={handleRemoveApod} />
           ))}
         </DashboardCards>
       </DashboardContent>
