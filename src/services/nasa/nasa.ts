@@ -1,4 +1,5 @@
-import { normalizeApod } from '../../models/Apod'
+import { MOCK_APODS } from '../../constants/apod/apodsMock'
+import { Apod, normalizeApod } from '../../models/Apod'
 import { getCachedApods, setCachedApods } from '../storage/apods'
 
 const APODS_PER_REQUEST = 30
@@ -22,9 +23,15 @@ export const getNasaApods = async () => {
       `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&count=${APODS_PER_REQUEST}`
     )
 
-    const data: ApodResponse[] = await response.json()
+    let normalizedApods: Apod[] = []
 
-    const normalizedApods = data.map(normalizeApod)
+    if (!response.ok) {
+      normalizedApods = MOCK_APODS
+    } else {
+      const data: ApodResponse[] = await response.json()
+      normalizedApods = data.map(normalizeApod)
+    }
+
     setCachedApods(normalizedApods)
 
     return normalizedApods

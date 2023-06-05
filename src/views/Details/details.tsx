@@ -9,19 +9,22 @@ import {
   Buttoneditar,
   Buttoneliminar,
 } from './detailsStyles'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Apod } from '../../models/Apod'
 import {
   getCachedApodById,
   getCachedApods,
   setCachedApods,
+  toggleFavorites,
 } from '../../services/storage/apods'
 import BackArrow from '../../components/Back/backArrow'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 const Details: FC = () => {
   const { apodId } = useParams()
+  const navigate = useNavigate()
   const [apod, setApod] = useState<Apod | null>(null)
+  const [isFav, setIsFav] = useState(false)
 
   const handleRemoveApod = useCallback(
     (apodTitle: string) => {
@@ -31,59 +34,35 @@ const Details: FC = () => {
           (apod) => apod.title !== apodTitle
         )
         setCachedApods(filteredApods)
+        navigate('/dashboard')
       }
     },
     [apodId]
   )
-
-  const [favoritos, setFavoritos] = useState<
-    { title: string; explanation: string }[]
-  >([]) // 1 declaro favoritos
 
   useEffect(() => {
     if (apodId) {
       const retrievedApod = getCachedApodById(apodId)
       if (retrievedApod) {
         setApod(retrievedApod)
+        setIsFav(retrievedApod.isFav)
       }
     }
   }, [apodId])
 
-  useEffect(() => {
-
-    const favoritosGuardados = localStorage.getItem('favoritos');
-    if (favoritosGuardados) {
-      const favoritosParseados = JSON.parse(favoritosGuardados);
-      setFavoritos((prevFavoritos) => [...prevFavoritos, ...favoritosParseados]);
+  const handleToggleFavorites = useCallback(() => {
+    if (apod) {
+      toggleFavorites(apod)
+      setIsFav(!isFav)
     }
-  }, []);
-
-
-  useEffect(() => {
-    // 3 almaceno los favoritos en el LocalStorage
-    localStorage.setItem('favoritos', JSON.stringify(favoritos))
-  }, [favoritos])
-
-  if (!apod) {
-    return <div>ERROR 404 NOT FOUND</div>
-  }
-
-  const handleFavoritoClick = () => {
-
-    const nuevoFavorito = { title: apod.title, explanation: apod.explanation };
-  
-    // Verificar si el favorito ya está presente en la lista
-    const favoritoExistente = favoritos.some(
-      (favorito) => favorito.title === nuevoFavorito.title
-    );
-  
-    if (!favoritoExistente) {
-      setFavoritos((prevFavoritos) => [...prevFavoritos, nuevoFavorito]);
-    }
-  };
+  }, [isFav, apod])
 
   const handleEditarClick = () => {
     console.log("Botón 'Editar' clickeado")
+  }
+
+  if (!apod) {
+    return <div>ERROR 404 NOT FOUND</div>
   }
 
   return (
@@ -92,7 +71,9 @@ const Details: FC = () => {
       <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
         <Buttoneditar onClick={handleEditarClick}>Editar</Buttoneditar>
-        <Buttonfavorito onClick={handleFavoritoClick}>Favoritos</Buttonfavorito>
+        <Buttonfavorito onClick={handleToggleFavorites}>
+          {isFav ? 'Remove Fav' : 'Add Fav'}
+        </Buttonfavorito>
         <Buttoneliminar onClick={() => handleRemoveApod(apod.title)}>
           Eliminar
         </Buttoneliminar>

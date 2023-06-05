@@ -16,6 +16,7 @@ export const normalizeApod = (input: ApodResponse) => ({
   date: input?.date || '',
   hdurl: input?.hdurl || '',
   url: input?.url || '',
+  isFav: false,
 })
 
 export type Apod = ReturnType<typeof normalizeApod>
