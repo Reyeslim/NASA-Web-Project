@@ -23,9 +23,9 @@ const Header: FC = () => {
   return (
     <Container>
       <ButtonContainer>
-        <Button onClick={handleReset}>RESET</Button>
-        <Button onClick={handlePerfilClick}>PROFILE</Button>
-        <Button onClick={handleLogout}>LOGOUT</Button>
+        <Button onClick={handleReset}>Reset</Button>
+        <Button onClick={handlePerfilClick}>Profile</Button>
+        <Button onClick={handleLogout}>Logout</Button>
       </ButtonContainer>
     </Container>
   )

@@ -2,19 +2,26 @@ import styled from 'styled-components'
 import type { Props } from './buttonTypes'
 
 export const CustomButton = styled.button<{ $variant: Props['variant'] }>`
-  /* margin-left: 10px;
-  cursor: pointer;
-  background-color: rgba(255, 129, 124, 0.59);
-  border: 2px solid coral;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 10px;
   border-radius: 4px;
-  border-style: ridge;
-  color: rgb(75, 3, 142);
-  transition: all 200ms ease-in-out;
-  padding: 8px 6px;
+  cursor: pointer;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  min-width: 135px; 
 
   &:hover {
-    background-color: bisque;
-    color: rgb(255, 0, 212);
-    cursor: pointer;
-  } */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3f51b5;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3f51b5;
+  }
+}
 `

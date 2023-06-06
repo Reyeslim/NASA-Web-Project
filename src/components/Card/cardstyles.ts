@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 130px;
+  margin-top: 60px;
   margin-bottom: 20px;
 `
 
@@ -21,15 +21,30 @@ export const Content = styled.div`
 `
 
 export const Button = styled(DefaultButton)`
-  background-color: #e8e8e8;
+ margin-bottom: 80px;
+  margin-top: 100px;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
   border: none;
+  margin-right: 10px;
   border-radius: 4px;
-  padding: 8px;
   cursor: pointer;
-  margin-left: 8px;
-  &:first-child {
-    margin-left: 0;
+  border: 2px solid white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  min-width: 135px; 
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3f51b5;
   }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #3f51b5;
+  }
+}
 `
 
 export const Header = styled.div`
