@@ -23,5 +23,5 @@ export const CustomButton = styled.button<{ $variant: Props['variant'] }>`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
+
 `
