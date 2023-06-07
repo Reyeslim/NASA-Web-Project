@@ -21,7 +21,7 @@ export const Content = styled.div`
 `
 
 export const Button = styled(DefaultButton)`
- margin-bottom: 80px;
+  margin-bottom: 80px;
   margin-top: 100px;
   background-color: transparent;
   color: white;
@@ -33,7 +33,7 @@ export const Button = styled(DefaultButton)`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -44,7 +44,6 @@ export const Button = styled(DefaultButton)`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `
 
 export const Header = styled.div`
