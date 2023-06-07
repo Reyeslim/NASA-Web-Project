@@ -50,9 +50,9 @@ const Dashboard: FC = () => {
   return (
     <DashboardContainer>
       <VideoBackground videoSrc="/earth.mp4" />
+      <Button onClick={handleGoToCreateForm}>Create New Entity</Button>
       <Header />
       <DashboardContent>
-        <Button onClick={handleGoToCreateForm}>CREATE NEW ENTITY</Button>
         <DashboardCards>
           {apods.map((apod, index) => (
             <Card key={index} apod={apod} onRemove={handleRemoveApod} />
