@@ -8,7 +8,7 @@ export const DashboardContainer = styled.div`
 `
 
 export const DashboardContent = styled.div`
-  width: 80%; 
+  width: 80%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;

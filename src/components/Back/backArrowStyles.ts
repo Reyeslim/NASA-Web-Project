@@ -11,7 +11,7 @@ export const BackButton = styled.button`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -22,5 +22,4 @@ export const BackButton = styled.button`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `

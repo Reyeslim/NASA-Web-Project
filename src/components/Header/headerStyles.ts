@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.header`
   background: rgba(17, 17, 17, 0.7);
@@ -19,7 +19,7 @@ export const Container = styled.header`
     justify-content: center; /* Centra los botones */
     padding: 0 10px;
   }
-`;
+`
 
 export const ButtonContainer = styled.div`
   display: flex;
