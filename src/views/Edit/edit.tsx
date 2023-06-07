@@ -1,27 +1,64 @@
 import { FC, memo } from 'react'
+import {
+  Button,
+  Container,
+  Form,
+  Input,
+  InputController,
+  Label,
+} from './editStyles'
+import { Formik } from 'formik'
+import { ValidationSchema } from './constants'
+import useLogic from './logic'
 
 const EditForm: FC = () => {
+  const { handleEdit } = useLogic()
+
   return (
-    // container
-    <div>
-      {/* Form */}
-      <form>
-        {/* InputController */}
-        <div>
-          {/* Label */}
-          <label htmlFor='name'>Entity name</label>
-          <input id='name' type="text" />
-        </div>
-        <div>
-          <label htmlFor='date'>Date</label>
-          <input id='date' type="date" />
-        </div>
-        <div>
-          <label htmlFor='description'>Description</label>
-          <input id='description' type="text" />
-        </div>
-      </form>
-    </div>
+    <Container>
+      <Formik
+        initialValues={{
+          title: '',
+          description: '',
+          url: '',
+        }}
+        validationSchema={ValidationSchema}
+        onSubmit={handleEdit}
+      >
+        {({ handleSubmit, handleChange, values }) => (
+          <Form onSubmit={handleSubmit}>
+            <InputController>
+              <Label>Title</Label>
+              <Input
+                type="text"
+                name="title"
+                onChange={handleChange}
+                value={values.title}
+              />
+            </InputController>
+            <InputController>
+              <Label>Description</Label>
+              <Input
+                type="text"
+                name="description"
+                onChange={handleChange}
+                value={values.description}
+              />
+            </InputController>
+            <InputController>
+              <Label>Image</Label>
+              <Input
+                type="text"
+                name="url"
+                onChange={handleChange}
+                value={values.url}
+              />
+            </InputController>
+            <Button type="submit">Edit Apod</Button>
+          </Form>
+        )}
+      </Formik>
+    </Container>
   )
 }
 

@@ -3,7 +3,6 @@ import { Apod, ApodInput } from '../../models/Apod'
 const NASA_APODS_KEY = 'nasaApodLists'
 const APODS_FAV = 'apodsFav'
 
-// Recuperamos las listas de libros desde la base de datos del navegador o localStorage
 export const getCachedApods = (): Apod[] => {
   const response = window.localStorage.getItem(NASA_APODS_KEY)
   const apods = response ? JSON.parse(response) : []
@@ -14,7 +13,6 @@ export const getCachedApods = (): Apod[] => {
   })
 }
 
-// Guardamos las listas de libros en la base de datos del navegador o localStorage
 export const setCachedApods = (apods: Apod[]) => {
   window.localStorage.setItem(NASA_APODS_KEY, JSON.stringify(apods))
 }
@@ -28,6 +26,8 @@ export const addNewApod = (data: ApodInput) => {
   const apodList = getCachedApods()
   setCachedApods([...apodList, data as Apod])
 }
+
+export const editExistentApod = () => {}
 
 export const getFavoritesApods = (): Apod[] => {
   const response = window.localStorage.getItem(APODS_FAV)
