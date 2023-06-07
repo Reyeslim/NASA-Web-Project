@@ -16,9 +16,10 @@ import {
 } from './loginStyles'
 import useLogic from './logic'
 import VideoBackground from '../../../components/VideoBackground/videoBackground'
+import { Props } from './types'
 
-const Login: FC = () => {
-  const { handleOnSubmit } = useLogic()
+const Login: FC<Props> = ({ onLogin }) => {
+  const { handleOnSubmit } = useLogic(onLogin)
   return (
     <Container>
       <VideoBackground videoSrc="/earth.mp4" />
@@ -53,7 +54,7 @@ const Login: FC = () => {
               </InputController>
               <Button type="submit">Log in</Button>
               <Info>
-                Don't have an account yet? {' '}
+                Don't have an account yet?{' '}
                 <Link to="/signup">Sign up here </Link>
               </Info>
             </FormContent>

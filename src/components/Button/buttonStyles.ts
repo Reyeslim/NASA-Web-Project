@@ -12,7 +12,7 @@ export const CustomButton = styled.button<{ $variant: Props['variant'] }>`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);

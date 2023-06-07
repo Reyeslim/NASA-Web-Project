@@ -6,7 +6,6 @@ export const DetailsContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  
 `
 
 export const DetailsContent = styled.div`
@@ -45,7 +44,7 @@ export const Buttoneditar = styled.button`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -56,7 +55,6 @@ export const Buttoneditar = styled.button`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `
 
 export const Buttonfavorito = styled.button`
@@ -70,7 +68,7 @@ export const Buttonfavorito = styled.button`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -81,7 +79,6 @@ export const Buttonfavorito = styled.button`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `
 
 export const Buttoneliminar = styled.button`
@@ -95,7 +92,7 @@ export const Buttoneliminar = styled.button`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px; 
+  min-width: 135px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -106,5 +103,4 @@ export const Buttoneliminar = styled.button`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `

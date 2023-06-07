@@ -10,18 +10,15 @@ import {
 import { Formik } from 'formik'
 import { ValidationSchema } from './constants'
 import useLogic from './logic'
+import { Props } from './types'
 
-const EditForm: FC = () => {
-  const { handleEdit } = useLogic()
+const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
+  const { handleEdit } = useLogic(id, onEditComplete)
 
   return (
     <Container>
       <Formik
-        initialValues={{
-          title: '',
-          description: '',
-          url: '',
-        }}
+        initialValues={initialValues}
         validationSchema={ValidationSchema}
         onSubmit={handleEdit}
       >
@@ -40,9 +37,9 @@ const EditForm: FC = () => {
               <Label>Description</Label>
               <Input
                 type="text"
-                name="description"
+                name="explanation"
                 onChange={handleChange}
-                value={values.description}
+                value={values.explanation}
               />
             </InputController>
             <InputController>
@@ -62,4 +59,4 @@ const EditForm: FC = () => {
   )
 }
 
-export default memo(EditForm)
+export default memo(FormDetails)

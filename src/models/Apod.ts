@@ -6,6 +6,12 @@ export type ApodInput = {
   url: string
 }
 
+export type EditApodInput = {
+  title: string
+  url: string
+  explanation: string
+}
+
 export const normalizeApod = (input: ApodResponse) => ({
   id: uniqid(),
   title: input?.title || '',

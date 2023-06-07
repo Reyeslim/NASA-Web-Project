@@ -10,11 +10,13 @@ import {
 import { Formik } from 'formik'
 import { InitialValues, ValidationSchema } from './constants'
 import useLogic from './logic'
+import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 const CreateForm: FC = () => {
   const { handleCreate } = useLogic()
   return (
     <Container>
+      <VideoBackground videoSrc="/earth.mp4" />
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
