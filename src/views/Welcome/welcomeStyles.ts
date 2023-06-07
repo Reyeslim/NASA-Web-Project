@@ -13,4 +13,3 @@ export const WelcomeGif = styled.div`
   margin-left: auto;
   margin-right: auto;
 `;
-

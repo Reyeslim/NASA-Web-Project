@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BackButton = styled.button`
+export const ButtonJourney = styled.button`
   background-color: transparent;
   color: white;
   padding: 10px 20px;
