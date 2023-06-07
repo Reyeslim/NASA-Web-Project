@@ -1,4 +1,4 @@
-import { Apod, ApodInput } from '../../models/Apod'
+import { Apod, ApodInput, EditApodInput } from '../../models/Apod'
 
 const NASA_APODS_KEY = 'nasaApodLists'
 const APODS_FAV = 'apodsFav'
@@ -27,7 +27,15 @@ export const addNewApod = (data: ApodInput) => {
   setCachedApods([...apodList, data as Apod])
 }
 
-export const editExistentApod = () => {}
+export const editCachedApod = (id: string, values: EditApodInput) => {
+  const cachedApods = getCachedApods()
+  const currentApod = cachedApods.find((cachedApod) => cachedApod.id === id)
+  const filteredCachedApod = cachedApods.filter(
+    (cachedApod) => cachedApod.id !== id
+  )
+  const editedApod = { ...currentApod, ...values } as Apod
+  setCachedApods([...filteredCachedApod, editedApod])
+}
 
 export const getFavoritesApods = (): Apod[] => {
   const response = window.localStorage.getItem(APODS_FAV)

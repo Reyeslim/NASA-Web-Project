@@ -9,8 +9,8 @@ import {
   Buttoneditar,
   Buttoneliminar,
 } from './detailsStyles'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Apod } from '../../models/Apod'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { Apod, EditApodInput } from '../../models/Apod'
 import {
   getCachedApodById,
   getCachedApods,
@@ -19,12 +19,19 @@ import {
 } from '../../services/storage/apods'
 import BackArrow from '../../components/Back/backArrow'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
+import FormDetails from './FormDetails/FormDetails'
 
 const Details: FC = () => {
   const { apodId } = useParams()
   const navigate = useNavigate()
+  const [queryData] = useSearchParams()
   const [apod, setApod] = useState<Apod | null>(null)
   const [isFav, setIsFav] = useState(false)
+  const [isEdit, setIsEdit] = useState(false)
+
+  useEffect(() => {
+    setIsEdit(!!queryData.get('edit'))
+  }, [queryData])
 
   const handleRemoveApod = useCallback(
     (apodTitle: string) => {
@@ -58,13 +65,33 @@ const Details: FC = () => {
   }, [isFav, apod])
 
   const handleGoToEditForm = () => {
-    navigate(`/apods/${apodId}/edit`)
+    navigate(`/apods/${apodId}?edit=true`)
   }
 
+  const handleOnCompleteEdition = useCallback(
+    (values: EditApodInput) => {
+      const editedApod = { ...apod, ...values } as Apod
+      setApod(editedApod)
+    },
+    [apod]
+  )
   if (!apod) {
     return <div>ERROR 404 NOT FOUND</div>
   }
 
+  if (isEdit) {
+    return (
+      <FormDetails
+        onEditComplete={handleOnCompleteEdition}
+        id={apod.id}
+        initialValues={{
+          title: apod.title,
+          explanation: apod.explanation,
+          url: apod.url,
+        }}
+      />
+    )
+  }
   return (
     <DetailsContainer>
       <VideoBackground videoSrc="/earth.mp4" />

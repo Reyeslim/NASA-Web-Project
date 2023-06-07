@@ -8,7 +8,7 @@ export const DashboardContainer = styled.div`
 `
 
 export const DashboardContent = styled.div`
-  width: 80%; 
+  width: 80%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -45,5 +45,4 @@ export const Button = styled.button`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
-}
 `
