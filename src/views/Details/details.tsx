@@ -37,7 +37,7 @@ const Details: FC = () => {
         navigate('/dashboard')
       }
     },
-    [apodId]
+    [apodId, navigate]
   )
 
   useEffect(() => {
@@ -57,8 +57,8 @@ const Details: FC = () => {
     }
   }, [isFav, apod])
 
-  const handleEditarClick = () => {
-    console.log("Botón 'Editar' clickeado")
+  const handleGoToEditForm = () => {
+    navigate(`/apods/${apodId}/edit`)
   }
 
   if (!apod) {
@@ -69,9 +69,8 @@ const Details: FC = () => {
     <DetailsContainer>
       <VideoBackground videoSrc="/earth.mp4" />
       <ButtonContainer>
-
         <BackArrow />
-        <Buttoneditar onClick={handleEditarClick}>Edit</Buttoneditar>
+        <Buttoneditar onClick={handleGoToEditForm}>Edit</Buttoneditar>
         <Buttonfavorito onClick={handleToggleFavorites}>
           {isFav ? 'Remove Fav' : 'Add Fav'}
         </Buttonfavorito>

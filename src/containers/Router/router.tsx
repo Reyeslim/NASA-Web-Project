@@ -7,6 +7,7 @@ import Perfil from '../../views/Perfil/perfil'
 import Details from '../../views/Details/details'
 import CreateForm from '../../views/Create/createForm'
 import Welcome from '../../views/Welcome/welcome'
+import EditForm from '../../views/Edit/edit'
 
 const Router: FC = () => {
   return (
@@ -18,6 +19,7 @@ const Router: FC = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/create" element={<CreateForm />} />
+        <Route path="/apods/:apodId/edit" element={<EditForm />} />
         <Route path="/apods/:apodId" element={<Details />} />
         <Route path="/*" element={<Navigate replace to="/dashboard" />} />
       </Routes>
