@@ -34,7 +34,7 @@ export const Button = styled.button`
   border: 2px solid white;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  min-width: 135px;
+  min-width: 15px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -44,5 +44,17 @@ export const Button = styled.button`
   &:focus {
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    padding: 0 10px;
+    margin-right: 0;
+    min-width: 70px;
+    padding: 8px 16px;
+    font-size: 8px;
+    left: 6px;
+    top: 95px;
+    
   }
 `

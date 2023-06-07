@@ -9,8 +9,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 120px;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
+    max-width: 90vw;
+  }
 `
 
 export const Content = styled.div`
@@ -44,6 +49,15 @@ export const Button = styled(DefaultButton)`
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
   }
+
+  @media screen and (max-width: 768px) {
+    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
+    margin-bottom: 30px;
+    margin-top: 60px;
+    padding: 8px 16px;
+    font-size: 11px;
+    min-width: 70px;
+  }
 `
 
 export const Header = styled.div`
@@ -52,6 +66,12 @@ export const Header = styled.div`
   justify-content: flex-end;
   height: 4rem;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -60,6 +80,11 @@ export const ImageContainer = styled.div`
   align-items: center;
   height: 600px;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
+    height: 300px;
+  }
 `
 
 export const Image = styled.img`
@@ -69,10 +94,14 @@ export const Image = styled.img`
 `
 
 export const Title = styled.div`
-  color: #ffffff; // Cambia el color del título a blanco
-  font-size: 28px; // Cambia el tamaño del título a 28px
+  color: #ffffff;
   font-weight: bold;
+  font-size: 38px;
   margin-bottom: 10px;
-  font-family: 'Arial', sans-serif; // Cambia la fuente del título a una fuente moderna
+  font-family: 'Arial', sans-serif;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `
