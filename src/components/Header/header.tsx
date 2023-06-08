@@ -25,6 +25,7 @@ const Header: FC<Props> = ({ onLogout }) => {
   const handleLogout = useCallback(async () => {
     await logout()
     window.localStorage.removeItem('userToken')
+    window.localStorage.removeItem('userInfo')
     onLogout()
     navigate('/welcome')
   }, [navigate, onLogout])
