@@ -50,7 +50,7 @@ const Dashboard: FC<Props> = ({ onLogout }) => {
 
   return (
     <DashboardContainer>
-      <VideoBackground videoSrc="/earth.mp4" />
+      <VideoBackground videoSrc="/stars.mp4" />
       <Button onClick={handleGoToCreateForm}>Create New Entity</Button>
       <Header onLogout={onLogout} />
       <DashboardContent>

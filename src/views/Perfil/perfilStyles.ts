@@ -6,6 +6,7 @@ export const ButtonContainer = styled.div`
 `
 
 export const PerfilContainer = styled.div`
+color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,9 +14,9 @@ export const PerfilContainer = styled.div`
   width: 300px;
   height: 300px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 28px;
   background-color: rgba(245, 245, 245, 0.2);
-  margin: 180px auto;
+  margin: 10px auto;
 `
 
 export const Avatar = styled.div`
@@ -34,15 +35,11 @@ export const InfoContainer = styled.div`
 
 export const InfoItem = styled.p`
   margin-bottom: 10px;
-  /* Añade estilos adicionales según tus preferencias */
+  
 `
 
 export const AdditionalContainer = styled.div`
-  /* background-color: rgba(245, 245, 245, 0.2); */
-  /* padding: 40px;
-  border-radius: 8px;
-  margin: 40px 150px;
-  height: 300px; */
+
   display: flex;
   flex-flow: column;
   align-items: center;
