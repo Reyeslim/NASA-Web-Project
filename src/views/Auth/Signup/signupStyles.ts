@@ -48,7 +48,7 @@ export const Label = styled.label`
   font-size: 17px;
   font-weight: 500;
   text-align: center;
-  color: #ffffff; 
+  color: #ffffff;
 `
 
 export const Input = styled.input`
@@ -70,8 +70,7 @@ export const Input = styled.input`
   &:focus {
     background-color: rgba(199, 215, 245, 0.8);
   }
-`;
-
+`
 
 export const Button = styled(DefaultButton)`
   margin-top: 30px;
@@ -89,7 +88,6 @@ export const Button = styled(DefaultButton)`
     text-shadow: 0px 0px 10px #cf0ea9;
   }
 `
-
 
 export const InputError = styled.span`
   color: red;

@@ -12,7 +12,7 @@ import type { Props } from './types'
 import { useNavigate } from 'react-router-dom'
 import { toggleFavorites } from '../../services/storage/apods'
 
-const Card: FC<Props> = ({ apod, onRemove }) => {
+const Card: FC<Props> = ({ apod, onRemove, isProfile = false }) => {
   const navigate = useNavigate()
   const [isFav, setIsFav] = useState(apod.isFav)
 
@@ -31,7 +31,6 @@ const Card: FC<Props> = ({ apod, onRemove }) => {
     <Container>
       <Content>
         <Header>
-
           <Button onClick={handleGoToDetails}>Details</Button>
           <Button onClick={handleToggleFavorites}>
             {isFav ? 'Remove Fav' : 'Add Fav'}

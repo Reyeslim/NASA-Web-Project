@@ -1,5 +1,6 @@
 import { FC, memo, useCallback, useEffect, useState } from 'react'
 import {
+  
   DetailsContainer,
   DetailsContent,
   DetailsTitle,
@@ -9,6 +10,7 @@ import {
   Buttoneditar,
   Buttoneliminar,
 } from './detailsStyles'
+import Footer from '../../components/Footer/footer'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { Apod, EditApodInput } from '../../models/Apod'
 import {
@@ -111,6 +113,7 @@ const Details: FC = () => {
         <DetailsTitle>{apod.title}</DetailsTitle>
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>
       </DetailsContent>
+      <Footer />
     </DetailsContainer>
   )
 }
