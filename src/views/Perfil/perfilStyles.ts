@@ -6,7 +6,7 @@ export const ButtonContainer = styled.div`
 `
 
 export const PerfilContainer = styled.div`
-color: white;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +24,9 @@ export const Avatar = styled.div`
   height: 150px;
   border-radius: 50%;
   background-color: #ccc;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/4092/4092639.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   margin-bottom: 20px;
 `
 
@@ -35,11 +38,9 @@ export const InfoContainer = styled.div`
 
 export const InfoItem = styled.p`
   margin-bottom: 10px;
-  
 `
 
 export const AdditionalContainer = styled.div`
-
   display: flex;
   flex-flow: column;
   align-items: center;
