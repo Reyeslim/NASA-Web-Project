@@ -13,8 +13,9 @@ import { Apod } from '../../models/Apod'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
 import { useNavigate } from 'react-router-dom'
 import { getCachedApods, setCachedApods } from '../../services/storage/apods'
+import type { Props } from './dashboardTypes'
 
-const Dashboard: FC = () => {
+const Dashboard: FC<Props> = ({ onLogout }) => {
   const [apods, setApods] = useState<Apod[]>([])
 
   const [isLoading, setIsLoading] = useState(true)
@@ -51,7 +52,7 @@ const Dashboard: FC = () => {
     <DashboardContainer>
       <VideoBackground videoSrc="/earth.mp4" />
       <Button onClick={handleGoToCreateForm}>Create New Entity</Button>
-      <Header />
+      <Header onLogout={onLogout} />
       <DashboardContent>
         <DashboardCards>
           {apods.map((apod, index) => (
