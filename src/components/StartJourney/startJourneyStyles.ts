@@ -13,7 +13,7 @@ export const ButtonJourney = styled.button`
   padding: 10px 20px;
   border: none;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
   border: 2px solid white;
   font-size: 16px;
@@ -25,11 +25,14 @@ export const ButtonJourney = styled.button`
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #3f51b5;
     animation: none;
+    text-decoration-line: underline;
+    text-shadow: 0px 0px 10px #cf0ea9;
   }
 
   &:focus {
     outline: none;
     box-shadow: 0 0 5px #3f51b5;
+    text-shadow: 0px 0px 10px #cf0ea9;
   }
 
 `;

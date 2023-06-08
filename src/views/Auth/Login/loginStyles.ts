@@ -31,6 +31,7 @@ export const Title = styled.h3`
   font-weight: 500;
   line-height: 42px;
   text-align: center;
+  text-shadow: 0px 0px 20px rgba(81, 185, 249, 1);
 `
 
 export const InputController = styled.div`
@@ -44,7 +45,7 @@ export const InputController = styled.div`
 
 export const Label = styled.label`
   margin-top: 30px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   text-align: center;
   color: #ffffff; 
@@ -57,7 +58,7 @@ export const Input = styled.input`
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: #000000; /* Cambia el color del texto a negro */
 
@@ -74,13 +75,18 @@ export const Input = styled.input`
 export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;
-  background-color: #99c6f8;
-  color: #080710;
+  background-color: rgba(81, 185, 249, 0.45);
+  color: #FFFFFF;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
+
+  &:hover {
+text-decoration: underline;
+text-shadow: 0px 0px 10px #cf0ea9;
+  }
 `
 export const InputError = styled.span`
   color: red;
@@ -103,8 +109,10 @@ export const Link = styled(DefaultLink)`
   margin-top: 16px;
   text-align: center;
   transition: color 200ms ease-in-out;
+  text-shadow: 0px 0px 10px #cf0ea9;
 
   &:hover {
-    color: #99c6f8;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ffffff;
   }
 `
