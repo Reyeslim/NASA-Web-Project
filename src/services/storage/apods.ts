@@ -1,6 +1,6 @@
 import { Apod, ApodInput, EditApodInput } from '../../models/Apod'
 
-const NASA_APODS_KEY = 'nasaApodLists'
+export const NASA_APODS_KEY = 'nasaApodLists'
 const APODS_FAV = 'apodsFav'
 
 export const getCachedApods = (): Apod[] => {

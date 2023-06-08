@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const ButtonContainer = styled.div`
+  margin-top: 158px;
+  margin-left: 50px;
+`
+
 export const PerfilContainer = styled.div`
   display: flex;
   flex-direction: column;

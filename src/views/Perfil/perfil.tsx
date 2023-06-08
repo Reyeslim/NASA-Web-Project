@@ -5,6 +5,7 @@ import {
   InfoContainer,
   InfoItem,
   AdditionalContainer,
+  ButtonContainer,
 } from './perfilStyles'
 import Header from '../../components/Header/header'
 import Footer from '../../components/Footer/footer'
@@ -17,6 +18,7 @@ import {
   setCachedApods,
 } from '../../services/storage/apods'
 import Card from '../../components/Card/card'
+import BackArrow from '../../components/Back/backArrow'
 
 const Perfil: FC<Props> = ({ onLogout }) => {
   const user = getUserInfo()
@@ -33,6 +35,9 @@ const Perfil: FC<Props> = ({ onLogout }) => {
     <>
       <Header onLogout={onLogout} />
       <VideoBackground videoSrc="/earth.mp4" />
+      <ButtonContainer>
+        <BackArrow />
+      </ButtonContainer>
       <PerfilContainer>
         <Avatar />
         <InfoContainer>
