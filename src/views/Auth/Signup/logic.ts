@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Props } from './types'
 import { setToken } from '../../../services/storage/token'
 import { setUserInfo } from '../../../services/storage/user'
+import { updateProfile } from 'firebase/auth'
 
 const useLogic = (onSignup: Props['onSignup']) => {
   const navigate = useNavigate()
@@ -20,6 +21,9 @@ const useLogic = (onSignup: Props['onSignup']) => {
         if (user) {
           const token = await user.getIdToken()
           const userInfo = user.providerData
+          updateProfile(user, {
+            displayName: values.displayName,
+          })
           setUserInfo(userInfo)
           setToken(token)
           onSignup()

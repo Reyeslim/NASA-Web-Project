@@ -6,7 +6,7 @@ export const Container = styled.div``
 
 export const Form = styled.form`
   height: 570px;
-  width:340px;
+  width: 340px;
   background-color: rgba(245, 245, 245, 0.1);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@ export const Label = styled.label`
   font-size: 16px;
   font-weight: 500;
   text-align: center;
-  color: #ffffff; 
+  color: #ffffff;
 `
 
 export const Input = styled.input`
@@ -69,8 +69,7 @@ export const Input = styled.input`
   &:focus {
     background-color: rgba(199, 215, 245, 0.8);
   }
-`;
-
+`
 
 export const Button = styled(DefaultButton)`
   margin-top: 30px;
@@ -83,7 +82,6 @@ export const Button = styled(DefaultButton)`
   border-radius: 5px;
   cursor: pointer;
 `
-
 
 export const InputError = styled.span`
   color: red;
