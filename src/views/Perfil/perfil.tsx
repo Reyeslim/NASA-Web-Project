@@ -34,7 +34,7 @@ const Perfil: FC<Props> = ({ onLogout }) => {
   return (
     <>
       <Header onLogout={onLogout} />
-      <VideoBackground videoSrc="/earth.mp4" />
+      <VideoBackground videoSrc="/space.mp4" />
       <ButtonContainer>
         <BackArrow />
       </ButtonContainer>
