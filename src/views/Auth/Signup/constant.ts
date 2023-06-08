@@ -1,14 +1,19 @@
 import { number, object, string } from 'yup'
 export const InitialValues = {
-  name: '',
-  phone: '',
+  displayName: '',
+  phoneNumber: '',
   email: '',
   password: '',
 }
 
 export const ValidationSchema = object({
-  name: string().required(),
-  phone: number().required().positive().integer(),
-  email: string().email('No es un email válido').required(),
-  password: string().required(),
+  displayName: string().required('name is a required field'),
+  phoneNumber: number()
+    .required('phone number is a required field')
+    .positive()
+    .integer(),
+  email: string()
+    .email('not a valid email')
+    .required('email is a required field'),
+  password: string().required('password is a required field'),
 })

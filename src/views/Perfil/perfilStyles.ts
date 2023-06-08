@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const PerfilContainer = styled.div`
-
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,21 +22,23 @@ export const Avatar = styled.div`
 `
 
 export const InfoContainer = styled.div`
-
   display: flex;
   flex-direction: column;
   text-align: center;
 `
 
-export const InfoItem = styled.div`
+export const InfoItem = styled.p`
   margin-bottom: 10px;
   /* Añade estilos adicionales según tus preferencias */
 `
 
 export const AdditionalContainer = styled.div`
-background-color: rgba(245, 245, 245, 0.2);
-  padding: 40px;
+  /* background-color: rgba(245, 245, 245, 0.2); */
+  /* padding: 40px;
   border-radius: 8px;
   margin: 40px 150px;
-  height: 300px;
+  height: 300px; */
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 `
