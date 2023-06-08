@@ -95,18 +95,19 @@ const Details: FC = () => {
   return (
     <DetailsContainer>
       <VideoBackground videoSrc="/earth.mp4" />
-      <ButtonContainer>
-        <BackArrow />
-        <Buttoneditar onClick={handleGoToEditForm}>Edit</Buttoneditar>
-        <Buttonfavorito onClick={handleToggleFavorites}>
-          {isFav ? 'Remove Fav' : 'Add Fav'}
-        </Buttonfavorito>
-        <Buttoneliminar onClick={() => handleRemoveApod(apod.title)}>
-          Delete
-        </Buttoneliminar>
-      </ButtonContainer>
-
       <DetailsContent>
+        <ButtonContainer>
+          <BackArrow />
+          <Buttoneditar onClick={handleGoToEditForm}>Edit</Buttoneditar>
+          <Buttonfavorito onClick={handleToggleFavorites}>
+            {isFav ? 'Remove Fav' : 'Add Fav'}
+          </Buttonfavorito>
+          <Buttoneliminar onClick={() => handleRemoveApod(apod.title)}>
+            Delete
+          </Buttoneliminar>
+        </ButtonContainer>
+
+
         <DetailsTitle>{apod.title}</DetailsTitle>
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>
       </DetailsContent>

@@ -12,6 +12,7 @@ import { ValidationSchema } from './constants'
 import useLogic from './logic'
 import { Props } from './types'
 import VideoBackground from '../../../components/VideoBackground/videoBackground'
+import Footer from '../../../components/Footer/footer'
 
 const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
   const { handleEdit } = useLogic(id, onEditComplete)
@@ -57,6 +58,7 @@ const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
           </Form>
         )}
       </Formik>
+      <Footer />
     </Container>
   )
 }

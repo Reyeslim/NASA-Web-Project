@@ -25,7 +25,7 @@ export const Content = styled.div`
   align-items: center;
   border: 2px solid white;
   background-color: rgba(226, 226, 226, 0.1);
-    box-shadow: 0px 0px 20px #6583fa;
+  box-shadow: 0px 0px 20px rgba(81, 185, 249, 1);
 `
 
 export const Button = styled(DefaultButton)`
@@ -36,7 +36,7 @@ export const Button = styled(DefaultButton)`
   padding: 10px 20px;
   border: none;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   border: 2px solid white;
   font-size: 16px;
@@ -46,6 +46,7 @@ export const Button = styled(DefaultButton)`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #3f51b5;
+    text-decoration: underline;
   }
 
   &:focus {
@@ -103,9 +104,10 @@ export const Title = styled.div`
   color: #ffffff;
   font-weight: bold;
   font-size: 38px;
-  margin-bottom: 10px;
+  margin-top: 20px;
   font-family: 'Arial', sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 20px rgba(81, 185, 249, 1);
 
   @media screen and (max-width: 768px) {
     font-size: 18px;

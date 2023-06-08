@@ -16,11 +16,13 @@ export const Title = styled.h1`
   width: calc(80% - 20px); 
   text-align: center;
   margin-bottom: 10px;
+  text-shadow: 0px 0px 20px #6583fa;
 `;
 
 export const Subtitle = styled.h3`
-  font-size: 3vw;
+  font-size: 2vw;
   width: calc(80% - 20px);
   text-align: center;
   margin-bottom: 20px;
+  text-shadow: 0px 0px 20px #6583fa;
 `;

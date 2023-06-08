@@ -11,19 +11,25 @@ export const DetailsContainer = styled.div`
 export const DetailsContent = styled.div`
   width: 80%;
   margin-top: 20px;
+  background-color: rgba(226, 226, 226, 0.1);
+  box-shadow: 0px 0px 20px rgba(81, 185, 249, 0.5);
 `
 
 export const DetailsTitle = styled.h1`
   color: #ffffff;
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 35px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
+  text-shadow: 0px 0px 20px rgba(81, 185, 249, 1);
 `
 
 export const DetailsExplanation = styled.p`
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
+  text-shadow: 0px 0px 10px #000;
+  margin: 20px;
 `
 
 export const ButtonContainer = styled.div`
@@ -43,7 +49,7 @@ export const Buttoneditar = styled.button`
   padding: 10px 20px;
   border: none;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   border: 2px solid white;
   font-size: 16px;
@@ -53,6 +59,7 @@ export const Buttoneditar = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #3f51b5;
+    text-decoration: underline;
   }
 
   &:focus {
@@ -67,7 +74,7 @@ export const Buttonfavorito = styled.button`
   padding: 10px 20px;
   border: none;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   border: 2px solid white;
   font-size: 16px;
@@ -77,6 +84,7 @@ export const Buttonfavorito = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #3f51b5;
+    text-decoration: underline;
   }
 
   &:focus {
@@ -91,7 +99,7 @@ export const Buttoneliminar = styled.button`
   padding: 10px 20px;
   border: none;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   border: 2px solid white;
   font-size: 16px;
@@ -101,6 +109,7 @@ export const Buttoneliminar = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: #3f51b5;
+    text-decoration: underline;
   }
 
   &:focus {
