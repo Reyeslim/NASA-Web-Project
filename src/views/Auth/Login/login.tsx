@@ -15,6 +15,7 @@ import {
   Title,
 } from './loginStyles'
 import useLogic from './logic'
+import Footer from '../../../components/Footer/footer'
 import VideoBackground from '../../../components/VideoBackground/videoBackground'
 import { Props } from './types'
 
@@ -57,10 +58,13 @@ const Login: FC<Props> = ({ onLogin }) => {
                 Don't have an account yet?{' '}
                 <Link to="/signup">Sign up here </Link>
               </Info>
+              
             </FormContent>
+            
           </Form>
         )}
       </Formik>
+      <Footer />
     </Container>
   )
 }
