@@ -30,13 +30,13 @@ const Perfil: FC<Props> = ({ onLogout }) => {
       <PerfilContainer>
         <Avatar />
         <InfoContainer>
-          <InfoItem>
+          {/* <InfoItem>
             <strong>Name: </strong>
             {user[0].displayName}
           </InfoItem>
           <InfoItem>
             <strong>Phone number: </strong> {user[0].phoneNumber}
-          </InfoItem>
+          </InfoItem> */}
           <InfoItem>
             <strong>Email: </strong>
             {user[0].email}
