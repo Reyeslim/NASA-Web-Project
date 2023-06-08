@@ -1,4 +1,4 @@
-const USER_TOKEN_KEY = 'userToken'
+export const USER_TOKEN_KEY = 'userToken'
 
 export const getToken = () => {
   const response = window.localStorage.getItem(USER_TOKEN_KEY)

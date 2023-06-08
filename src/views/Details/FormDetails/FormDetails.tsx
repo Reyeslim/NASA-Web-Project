@@ -11,12 +11,14 @@ import { Formik } from 'formik'
 import { ValidationSchema } from './constants'
 import useLogic from './logic'
 import { Props } from './types'
+import VideoBackground from '../../../components/VideoBackground/videoBackground'
 
 const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
   const { handleEdit } = useLogic(id, onEditComplete)
 
   return (
     <Container>
+      <VideoBackground videoSrc="/earth.mp4" />
       <Formik
         initialValues={initialValues}
         validationSchema={ValidationSchema}
