@@ -23,6 +23,9 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid white;
+  background-color: rgba(226, 226, 226, 0.1);
+    box-shadow: 0px 0px 20px #6583fa;
 `
 
 export const Button = styled(DefaultButton)`
@@ -91,6 +94,9 @@ export const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  border: 2px solid black;
+  background-color: rgba(226, 226, 226, 0.1);
+  box-shadow: 0px 0px 15px #ffffff;
 `
 
 export const Title = styled.div`
