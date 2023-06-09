@@ -43,13 +43,11 @@ const Perfil: FC<Props> = ({ onLogout }) => {
           </InfoItem>
         </InfoContainer>
       </PerfilContainer>
-
       <AdditionalContainer>
         {currentFavs.map((apod, index) => (
           <Card key={index} apod={apod} onRemove={() => {}} />
         ))}
       </AdditionalContainer>
-
       <Footer />
     </>
   )

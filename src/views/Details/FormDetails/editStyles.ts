@@ -3,6 +3,11 @@ import DefaultButton from '../../../components/Button/button'
 
 export const Container = styled.div``
 
+export const ButtonContainer = styled.div`
+  margin-top: 58px;
+  margin-left: 30px;
+`
+
 export const Form = styled.form`
   height: 530px;
   width: 340px;

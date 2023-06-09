@@ -6,10 +6,13 @@ import {
   Input,
   InputController,
   Label,
+  ButtonContainer,
 } from './createFormStyles'
 import { Formik } from 'formik'
+import BackArrow from '../../components/Back/backArrow'
 import { InitialValues, ValidationSchema } from './constants'
 import useLogic from './logic'
+import Footer from '../../components/Footer/footer'
 import VideoBackground from '../../components/VideoBackground/videoBackground'
 
 const CreateForm: FC = () => {
@@ -17,6 +20,9 @@ const CreateForm: FC = () => {
   return (
     <Container>
       <VideoBackground videoSrc="/earth.mp4" />
+      <ButtonContainer>
+        <BackArrow />
+      </ButtonContainer>
       <Formik
         initialValues={InitialValues}
         validationSchema={ValidationSchema}
@@ -55,6 +61,7 @@ const CreateForm: FC = () => {
           </Form>
         )}
       </Formik>
+      <Footer />
     </Container>
   )
 }
