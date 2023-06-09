@@ -57,7 +57,7 @@ const CreateForm: FC = () => {
                 value={values.url}
               />
             </InputController>
-            <Button type="submit">Crear Apod</Button>
+            <Button type="submit">Create Apod</Button>
           </Form>
         )}
       </Formik>

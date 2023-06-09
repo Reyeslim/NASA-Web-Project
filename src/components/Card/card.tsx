@@ -30,17 +30,25 @@ const Card: FC<Props> = ({ apod, onRemove, isProfile = false }) => {
   return (
     <Container>
       <Content>
-        <Header>
-          <Button onClick={handleGoToDetails}>Details</Button>
-          <Button onClick={handleToggleFavorites}>
-            {isFav ? 'Remove Fav' : 'Add Fav'}
-          </Button>
-          <Button onClick={() => onRemove(apod.id)}>Remove</Button>
-        </Header>
-        <Title>{apod.title}</Title> {/* Utiliza el componente de título */}
+        {!isProfile && (
+          <Header>
+            <Button onClick={handleGoToDetails}>Details</Button>
+            <Button onClick={handleToggleFavorites}>
+              {isFav ? 'Remove Fav' : 'Add Fav'}
+            </Button>
+            <Button onClick={() => onRemove(apod.id)}>Remove</Button>
+          </Header>
+        )}
+
+        {isProfile && (
+          <Header>
+            <Button onClick={handleGoToDetails}>Details</Button>
+          </Header>
+        )}
+
+        <Title>{apod.title}</Title>
         <ImageContainer>
           <Image src={apod.url} alt={apod.title} />{' '}
-          {/* Utiliza la prop imageSrc como src */}
         </ImageContainer>
       </Content>
     </Container>

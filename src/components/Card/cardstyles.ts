@@ -13,7 +13,6 @@ export const Container = styled.div`
   margin-bottom: 20px;
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     max-width: 90vw;
   }
 `
@@ -55,7 +54,6 @@ export const Button = styled(DefaultButton)`
   }
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     margin-bottom: 30px;
     margin-top: 60px;
     padding: 8px 16px;
@@ -72,7 +70,6 @@ export const Header = styled.div`
   margin-bottom: 10px;
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     justify-content: center;
     margin-bottom: 20px;
   }
@@ -86,7 +83,6 @@ export const ImageContainer = styled.div`
   margin-bottom: 30px;
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     height: 300px;
   }
 `

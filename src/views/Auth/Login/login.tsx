@@ -58,9 +58,7 @@ const Login: FC<Props> = ({ onLogin }) => {
                 Don't have an account yet?{' '}
                 <Link to="/signup">Sign up here </Link>
               </Info>
-              
             </FormContent>
-            
           </Form>
         )}
       </Formik>

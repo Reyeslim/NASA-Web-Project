@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useState } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { getToken } from '../../services/storage/token'
 import { PrivateRoutes } from './PrivateRoutes/PrivateRoutes'
 import { PublicRoutes } from './PublicRoutes/PublicRoutes'

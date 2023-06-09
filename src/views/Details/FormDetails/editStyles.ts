@@ -52,10 +52,10 @@ export const Input = styled.input`
   margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
-  color: #000000; /* Cambia el color del texto a negro */
+  color: #000000;
 
   &:-webkit-autofill {
-    -webkit-text-fill-color: #000000; /* Cambia el color del texto a negro */
+    -webkit-text-fill-color: #000000;
     box-shadow: 0 0 0px 1000px rgba(199, 215, 245, 0.8) inset;
   }
 
@@ -68,14 +68,14 @@ export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;
   background-color: rgba(81, 185, 249, 0.45);
-  color: #FFFF;
+  color: #ffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
 
-&:hover {
+  &:hover {
     text-decoration: underline;
     text-shadow: 0px 0px 10px #cf0ea9;
   }

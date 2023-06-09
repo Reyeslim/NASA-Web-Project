@@ -9,14 +9,13 @@ export const Container = styled.header`
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Alinea los botones a la derecha */
+  justify-content: flex-end;
   padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 100;
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
-    justify-content: center; /* Centra los botones */
+    justify-content: center;
     padding: 0 10px;
   }
 `
@@ -26,7 +25,6 @@ export const ButtonContainer = styled.div`
   margin-right: 40px;
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     margin-right: 0;
   }
 `
@@ -49,7 +47,6 @@ export const Button = styled.button`
     border-color: #3f51b5;
     text-decoration: underline;
     text-shadow: 0px 0px 10px #ffffff;
-  
   }
 
   &:focus {
@@ -58,7 +55,6 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    /* Aplica los estilos cuando el ancho de la pantalla sea igual o menor a 768px */
     min-width: auto;
     padding: 8px 16px;
     font-size: 14px;

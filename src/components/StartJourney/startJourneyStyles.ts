@@ -1,11 +1,10 @@
 import styled, { keyframes } from 'styled-components'
 
-
 const blinkAnimation = keyframes`
   0% { background-color: transparent; }
   50% { background-color: rgba(63, 81, 181, 0.6); } 
   100% { background-color: transparent; }
-`;
+`
 
 export const ButtonJourney = styled.button`
   background-color: transparent;
@@ -19,7 +18,7 @@ export const ButtonJourney = styled.button`
   font-size: 16px;
   transition: all 0.3s ease-in-out;
   min-width: 135px;
-  animation: ${blinkAnimation} 1s infinite; 
+  animation: ${blinkAnimation} 1s infinite;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -34,5 +33,4 @@ export const ButtonJourney = styled.button`
     box-shadow: 0 0 5px #3f51b5;
     text-shadow: 0px 0px 10px #cf0ea9;
   }
-
-`;
+`
