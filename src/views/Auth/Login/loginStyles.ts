@@ -60,10 +60,10 @@ export const Input = styled.input`
   margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
-  color: #000000; /* Cambia el color del texto a negro */
+  color: #000000; /
 
   &:-webkit-autofill {
-    -webkit-text-fill-color: #000000; /* Cambia el color del texto a negro */
+    -webkit-text-fill-color: #000000; 
     box-shadow: 0 0 0px 1000px rgba(199, 215, 245, 0.8) inset;
   }
 

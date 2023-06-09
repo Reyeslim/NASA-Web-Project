@@ -6,6 +6,7 @@ import {
   Input,
   InputController,
   Label,
+  ButtonContainer,
 } from './editStyles'
 import { Formik } from 'formik'
 import { ValidationSchema } from './constants'
@@ -13,6 +14,7 @@ import useLogic from './logic'
 import { Props } from './types'
 import VideoBackground from '../../../components/VideoBackground/videoBackground'
 import Footer from '../../../components/Footer/footer'
+import BackArrow from '../../../components/Back/backArrow'
 
 const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
   const { handleEdit } = useLogic(id, onEditComplete)
@@ -20,6 +22,9 @@ const FormDetails: FC<Props> = ({ id, initialValues, onEditComplete }) => {
   return (
     <Container>
       <VideoBackground videoSrc="/earth.mp4" />
+      <ButtonContainer>
+        <BackArrow />
+      </ButtonContainer>
       <Formik
         initialValues={initialValues}
         validationSchema={ValidationSchema}
