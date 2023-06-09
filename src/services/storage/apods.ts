@@ -13,6 +13,11 @@ export const getCachedApods = (): Apod[] => {
   })
 }
 
+export const resetApodsCache = () => {
+  window.localStorage.removeItem(NASA_APODS_KEY)
+  window.localStorage.removeItem(APODS_FAV)
+}
+
 export const setCachedApods = (apods: Apod[]) => {
   window.localStorage.setItem(NASA_APODS_KEY, JSON.stringify(apods))
 }

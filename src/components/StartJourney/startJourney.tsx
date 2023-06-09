@@ -6,7 +6,6 @@ export const StartJourney: FC = () => {
   const navigate = useNavigate()
   const handleGoToLogin = useCallback(() => {
     navigate('/login')
-    console.log('click')
   }, [navigate])
 
   return <ButtonJourney onClick={handleGoToLogin}> Start </ButtonJourney>
