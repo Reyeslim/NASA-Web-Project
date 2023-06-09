@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { VideoBackgroundContainer, Video } from './videoBackgroundStyles';
+import { FC } from 'react'
+import { VideoBackgroundContainer, Video } from './videoBackgroundStyles'
 
 interface VideoBackgroundProps {
-  videoSrc: string;
+  videoSrc: string
 }
 
 const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
@@ -12,7 +12,7 @@ const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
         <source src={videoSrc} type="video/mp4" />
       </Video>
     </VideoBackgroundContainer>
-  );
-};
+  )
+}
 
-export default VideoBackground;
+export default VideoBackground

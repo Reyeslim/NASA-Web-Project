@@ -46,7 +46,8 @@ const Signup: FC<Props> = ({ onSignup }) => {
               </InputController>
               <InputController>
                 <Label>Phone number</Label>
-                <Input maxLength={15}
+                <Input
+                  maxLength={15}
                   type="tel"
                   name="phoneNumber"
                   onChange={handleChange}

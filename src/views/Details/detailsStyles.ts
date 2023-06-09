@@ -37,11 +37,11 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  
+
   @media (max-width: 768px) {
     flex-wrap: wrap;
   }
-`;
+`
 
 export const Buttoneditar = styled.button`
   background-color: transparent;

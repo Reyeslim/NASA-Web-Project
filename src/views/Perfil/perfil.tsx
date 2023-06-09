@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from 'react'
+import { FC, memo } from 'react'
 import {
   PerfilContainer,
   Avatar,
@@ -30,13 +30,6 @@ const Perfil: FC<Props> = ({ onLogout }) => {
       <PerfilContainer>
         <Avatar />
         <InfoContainer>
-          {/* <InfoItem>
-            <strong>Name: </strong>
-            {user[0].displayName}
-          </InfoItem>
-          <InfoItem>
-            <strong>Phone number: </strong> {user[0].phoneNumber}
-          </InfoItem> */}
           <InfoItem>
             <strong>Email: </strong>
             {user[0].email}
@@ -45,7 +38,7 @@ const Perfil: FC<Props> = ({ onLogout }) => {
       </PerfilContainer>
       <AdditionalContainer>
         {currentFavs.map((apod, index) => (
-          <Card key={index} apod={apod} onRemove={() => {}} />
+          <Card key={index} apod={apod} isProfile={true} onRemove={() => {}} />
         ))}
       </AdditionalContainer>
       <Footer />

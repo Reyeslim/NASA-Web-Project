@@ -5,8 +5,8 @@ import DefaultButton from '../../../components/Button/button'
 export const Container = styled.div``
 
 export const Form = styled.form`
-height: 530px;
-width:340px;
+  height: 530px;
+  width: 340px;
   background-color: rgba(245, 245, 245, 0.1);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -48,8 +48,8 @@ export const Label = styled.label`
   font-size: 17px;
   font-weight: 500;
   text-align: center;
-  color: #ffffff; 
-`;
+  color: #ffffff;
+`
 
 export const Input = styled.input`
   height: 50px;
@@ -60,23 +60,22 @@ export const Input = styled.input`
   margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
-  color: #000000; /
-
-  &:-webkit-autofill {
-    -webkit-text-fill-color: #000000; 
+  color: #000000;
+  / &:-webkit-autofill {
+    -webkit-text-fill-color: #000000;
     box-shadow: 0 0 0px 1000px rgba(199, 215, 245, 0.8) inset;
   }
 
   &:focus {
     background-color: rgba(199, 215, 245, 0.8);
   }
-`;
+`
 
 export const Button = styled(DefaultButton)`
   margin-top: 50px;
   width: 100%;
   background-color: rgba(81, 185, 249, 0.45);
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
@@ -84,8 +83,8 @@ export const Button = styled(DefaultButton)`
   cursor: pointer;
 
   &:hover {
-text-decoration: underline;
-text-shadow: 0px 0px 10px #cf0ea9;
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px #cf0ea9;
   }
 `
 export const InputError = styled.span`

@@ -1,6 +1,5 @@
 import { FC, memo, useCallback, useEffect, useState } from 'react'
 import {
-  
   DetailsContainer,
   DetailsContent,
   DetailsTitle,
@@ -108,7 +107,6 @@ const Details: FC = () => {
             Delete
           </Buttoneliminar>
         </ButtonContainer>
-
 
         <DetailsTitle>{apod.title}</DetailsTitle>
         <DetailsExplanation>{apod.explanation}</DetailsExplanation>

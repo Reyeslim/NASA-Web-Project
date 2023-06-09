@@ -57,6 +57,5 @@ export const Button = styled.button`
     font-size: 8px;
     left: 6px;
     top: 95px;
-    
   }
-  `
+`

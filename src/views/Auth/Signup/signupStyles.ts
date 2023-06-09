@@ -6,7 +6,7 @@ export const Container = styled.div``
 
 export const Form = styled.form`
   height: 585px;
-  width:340px;
+  width: 340px;
   background-color: rgba(245, 245, 245, 0.1);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -22,9 +22,7 @@ export const Form = styled.form`
   border: none;
 `
 
-export const FormContent = styled.div`
-  /* padding: 10px; */
-`
+export const FormContent = styled.div``
 
 export const Title = styled.h3`
   font-size: 24px;
@@ -60,10 +58,9 @@ export const Input = styled.input`
   margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
-  color: #000000; /* Cambia el color del texto a negro */
-
+  color: #000000;
   &:-webkit-autofill {
-    -webkit-text-fill-color: #000000; /* Cambia el color del texto a negro */
+    -webkit-text-fill-color: #000000;
     box-shadow: 0 0 0px 1000px rgba(199, 215, 245, 0.8) inset;
   }
 
@@ -76,13 +73,13 @@ export const Button = styled(DefaultButton)`
   margin-top: 30px;
   width: 100%;
   background-color: rgba(81, 185, 249, 0.45);
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
-  
+
   &:hover {
     text-decoration: underline;
     text-shadow: 0px 0px 10px #cf0ea9;

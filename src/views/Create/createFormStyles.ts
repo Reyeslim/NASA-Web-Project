@@ -43,7 +43,6 @@ export const Label = styled.label`
   color: #ffffff;
 `
 
-
 export const Input = styled.input`
   height: 50px;
   width: 95%;
@@ -53,10 +52,10 @@ export const Input = styled.input`
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
-  color: #000000; /* Cambia el color del texto a negro */
+  color: #000000;
 
   &:-webkit-autofill {
-    -webkit-text-fill-color: #000000; /* Cambia el color del texto a negro */
+    -webkit-text-fill-color: #000000;
     box-shadow: 0 0 0px 1000px rgba(199, 215, 245, 0.8) inset;
   }
 
@@ -64,7 +63,6 @@ export const Input = styled.input`
     background-color: rgba(199, 215, 245, 0.8);
   }
 `
-
 
 export const Button = styled(DefaultButton)`
   margin-top: 50px;
@@ -76,7 +74,6 @@ export const Button = styled(DefaultButton)`
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-  
 `
 
 export const Info = styled.p`
