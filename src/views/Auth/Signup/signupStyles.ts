@@ -20,6 +20,11 @@ export const Form = styled.form`
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+
+  @media screen and (max-width: 768px) {
+    width: auto;
+    height: auto;
+  }
 `
 
 export const FormContent = styled.div``
@@ -30,6 +35,11 @@ export const Title = styled.h3`
   line-height: 42px;
   text-align: center;
   text-shadow: 0px 0px 20px rgba(81, 185, 249, 1);
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 `
 
 export const InputController = styled.div`
@@ -47,6 +57,11 @@ export const Label = styled.label`
   font-weight: 500;
   text-align: center;
   color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 5px;
+  }
 `
 
 export const Input = styled.input`
@@ -83,6 +98,11 @@ export const Button = styled(DefaultButton)`
   &:hover {
     text-decoration: underline;
     text-shadow: 0px 0px 10px #cf0ea9;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+    margin-top: 5px;
   }
 `
 

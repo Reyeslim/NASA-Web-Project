@@ -24,6 +24,11 @@ export const Form = styled.form`
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+
+  @media screen and (max-width: 768px) {
+    width: auto;
+    height: auto;
+  }
 `
 
 export const InputController = styled.div`
@@ -41,6 +46,11 @@ export const Label = styled.label`
   font-weight: 500;
   text-align: center;
   color: #ffffff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 5px;
+  }
 `
 
 export const Input = styled.input`
@@ -62,6 +72,11 @@ export const Input = styled.input`
   &:focus {
     background-color: rgba(199, 215, 245, 0.8);
   }
+
+  @media screen and (max-width: 768px) {
+    height: 30px;
+    font-size: 14px;
+  }
 `
 
 export const Button = styled(DefaultButton)`
@@ -79,12 +94,9 @@ export const Button = styled(DefaultButton)`
     text-decoration: underline;
     text-shadow: 0px 0px 10px #cf0ea9;
   }
-`
 
-export const Info = styled.p`
-  color: #dff9ff;
-  display: block;
-  font-size: 14px;
-  margin-top: 16px;
-  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+    margin-top: 5px;
+  }
 `
