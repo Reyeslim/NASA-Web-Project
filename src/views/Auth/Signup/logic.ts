@@ -17,7 +17,6 @@ const useLogic = (onSignup: Props['onSignup']) => {
     }) => {
       try {
         const user = await signup(values.email, values.password)
-        console.log(user)
         if (user) {
           const token = await user.getIdToken()
           const userInfo = user.providerData

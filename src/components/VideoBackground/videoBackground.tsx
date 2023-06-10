@@ -1,18 +1,19 @@
-import { FC } from 'react'
-import { VideoBackgroundContainer, Video } from './videoBackgroundStyles'
+import { FC, memo } from 'react'
+import {
+  VideoBackgroundContainer,
+  Video,
+  Source,
+} from './videoBackgroundStyles'
+import type { Props } from './videoBackgroundTypes'
 
-interface VideoBackgroundProps {
-  videoSrc: string
-}
-
-const VideoBackground: FC<VideoBackgroundProps> = ({ videoSrc }) => {
+const VideoBackground: FC<Props> = ({ videoSrc }) => {
   return (
     <VideoBackgroundContainer>
       <Video autoPlay loop muted>
-        <source src={videoSrc} type="video/mp4" />
+        <Source src={videoSrc} type="video/mp4" />
       </Video>
     </VideoBackgroundContainer>
   )
 }
 
-export default VideoBackground
+export default memo(VideoBackground)

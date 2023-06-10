@@ -3,18 +3,15 @@ import { Container, ButtonContainer, Button } from './headerStyles'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../../services/firebase/auth'
 import type { Props } from './headerTypes'
-import { USER_TOKEN_KEY } from '../../services/storage/token'
-import { USER_INFO_KEY } from '../../services/storage/user'
+import { removeToken } from '../../services/storage/token'
+import { resetApodsCache } from '../../services/storage/apods'
+import { resetUserInfo } from '../../services/storage/user'
 
 const Header: FC<Props> = ({ onLogout }) => {
   const navigate = useNavigate()
 
   const handleReset = useCallback(() => {
-    const keepedToken: any = localStorage.getItem(USER_TOKEN_KEY)
-    const keepedUserInfo: any = localStorage.getItem(USER_INFO_KEY)
-    window.localStorage.clear()
-    localStorage.setItem(USER_TOKEN_KEY, keepedToken)
-    localStorage.setItem(USER_INFO_KEY, keepedUserInfo)
+    resetApodsCache()
     navigate('/')
   }, [navigate])
 
@@ -24,8 +21,8 @@ const Header: FC<Props> = ({ onLogout }) => {
 
   const handleLogout = useCallback(async () => {
     await logout()
-    window.localStorage.removeItem(USER_TOKEN_KEY)
-    window.localStorage.removeItem(USER_INFO_KEY)
+    removeToken()
+    resetUserInfo()
     onLogout()
     navigate('/welcome')
   }, [navigate, onLogout])
